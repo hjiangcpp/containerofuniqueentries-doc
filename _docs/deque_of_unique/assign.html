@@ -112,11 +112,6 @@ title: assign
 <table class="t-par-begin">
   <tbody>
     <tr class="t-par">
-      <td>count</td>
-      <td>-</td>
-      <td>the new size of the container</td>
-    </tr>
-    <tr class="t-par">
       <td>value</td>
       <td>-</td>
       <td>the value to initialize elements of the container with</td>
@@ -166,7 +161,7 @@ title: assign
                 ></span
               ></span
             >, where
-            <span class="texhtml" style="white-space: nowrap">N</span> is
+            <span class="texhtml" style="white-space: nowrap">M</span> is
             <span class="t-c"
               ><span class="mw-geshi cpp source-cpp"
                 ><a href="http://en.cppreference.com/w/cpp/iterator/distance"
@@ -178,11 +173,11 @@ title: assign
                 ></span
               ></span
             >
-            and <span class="texhtml" style="white-space: nowrap">M</span> is
+            and <span class="texhtml" style="white-space: nowrap">N</span> is
             the elements in the original deque_of_unique. <br />Worst case:
             quadratic, i.e.
             <span class="texhtml" style="white-space: nowrap"
-              >O(N<sup>2</sup>).</span
+              >O(N+M<sup>2</sup>).</span
             ></span
           >
         </div>
@@ -194,11 +189,8 @@ title: assign
         <div>
           <span class="t-li4">
             Average case
-            <span class="texhtml" style="white-space: nowrap">O(N)</span> (<span
-              class="texhtml"
-              style="white-space: nowrap"
-              >N</span
-            >
+            <span class="texhtml" style="white-space: nowrap">O(N+M)</span>
+            (<span class="texhtml" style="white-space: nowrap">M</span>
             is
             <span class="t-c"
               ><span class="mw-geshi cpp source-cpp"
@@ -211,7 +203,7 @@ title: assign
             >).<br />
             Worst case:
             <span class="texhtml" style="white-space: nowrap"
-              >O(N<sup>2</sup>)</span
+              >O(N+M<sup>2</sup>)</span
             >.
           </span>
         </div>
