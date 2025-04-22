@@ -417,8 +417,8 @@ title: insert
         <div>
           <span class="t-li4"
             >Average case:
-            <span class="texhtml" style="white-space: nowrap">O(N * L)</span>
-            assuming no duplicates, , where N is
+            <span class="texhtml" style="white-space: nowrap">O(N + M)</span>
+            assuming no duplicates, where N is
             <span class="mw-geshi cpp source-cpp"
               ><a href="http://en.cppreference.com/w/cpp/iterator/distance"
                 ><span class="kw678"
@@ -427,14 +427,11 @@ title: insert
               ><span class="br0">(</span>first, last<span class="br0"
                 >)</span
               ></span
-            >
-            and L is the average distance for insertion into the deque. If the
-            elements are all duplicates, the complexity is
+            >. If the elements are all duplicates, the complexity is
             <span class="texhtml" style="white-space: nowrap">O(N)</span>.
             <br />Worst case:
-            <span class="texhtml" style="white-space: nowrap"
-              >O(N * (L + M))</span
-            >, where M is the size of original deque_of_unique.</span
+            <span class="texhtml" style="white-space: nowrap">O(N * M)</span>,
+            where M is the size of original deque_of_unique.</span
           >
         </div>
       </td>
@@ -445,15 +442,13 @@ title: insert
         <div>
           <span class="t-li4"
             >Average case:
-            <span class="texhtml" style="white-space: nowrap">O(N * L)</span>
+            <span class="texhtml" style="white-space: nowrap">O(N + M)</span>
             assuming no duplicates, where N is the size of
-            <span class="mw-geshi cpp source-cpp">ilist</span>
-            and L is the average distance for insertion into the deque. If the
-            elements are all duplicates, the complexity is
+            <span class="mw-geshi cpp source-cpp">ilist</span>. If the elements
+            are all duplicates, the complexity is
             <span class="texhtml" style="white-space: nowrap">O(N)</span>.
             <br />Worst case:
-            <span class="texhtml" style="white-space: nowrap"
-              >O(N * (L + M))</span
+            <span class="texhtml" style="white-space: nowrap">O(N * M)</span
             >.</span
           >
         </div>
