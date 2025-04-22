@@ -6,17 +6,31 @@ title: push_front
 
 <table class="t-dcl-begin">
   <tbody>
-    <tr class="t-dcl">
-      <td class="t-dcl-nopad">
+    <tr class="t-dcl t-since-cxx98">
+      <td>
         <div>
-          <span class="mw-geshi cpp source-cpp"
-            ><span class="kw4">bool</span> push_front<span class="br0">(</span
-            ><span class="br0">)</span><span class="sy4">;</span></span
+          <span id="Version_1"></span
+          ><span class="mw-geshi cpp source-cpp"
+            ><span class="kw4">bool</span> push_front<span class="br0">(</span>
+            <span class="kw4">const</span> T<span class="sy3">&amp;</span> value
+            <span class="br0">)</span><span class="sy4">;</span></span
           >
         </div>
       </td>
-      <td class="t-dcl-nopad"></td>
-      <td class="t-dcl-nopad"></td>
+      <td>(1)</td>
+    </tr>
+    <tr class="t-dcl t-since-cxx11">
+      <td>
+        <div>
+          <span id="Version_2"></span
+          ><span class="mw-geshi cpp source-cpp"
+            ><span class="kw4">bool</span> push_front<span class="br0">(</span>
+            T<span class="sy3">&amp;&amp;</span> value <span class="br0">)</span
+            ><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(2)</td>
     </tr>
     <tr class="t-dcl-sep">
       <td></td>
@@ -25,6 +39,7 @@ title: push_front
     </tr>
   </tbody>
 </table>
+
 <p>
   Prepends a copy of
   <span class="t-c"><span class="mw-geshi cpp source-cpp">value</span></span> to
