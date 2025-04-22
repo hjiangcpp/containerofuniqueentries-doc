@@ -265,6 +265,73 @@ title: deque_of_unique
     </tr>
   </tbody>
 </table>
+<h4>
+  <span class="mw-headline" id="Invalidation_notes">Invalidation notes</span>
+</h4>
+<ul>
+  <li>
+    When inserting at either end of the deque, references are not invalidated by
+    <span class="t-lc"
+      ><a href="insert" title="containerofunique/deque_of_unique/insert"
+        >insert</a
+      ></span
+    >
+    and
+    <span class="t-lc"
+      ><a href="emplace" title="containerofunique/deque_of_unique/emplace"
+        >emplace</a
+      ></span
+    >.
+  </li>
+  <li>
+    <span class="t-lc"
+      ><a href="push_front" title="containerofunique/deque_of_unique/push front"
+        >push_front</a
+      ></span
+    >,
+    <span class="t-lc"
+      ><a href="push_back" title="containerofunique/deque_of_unique/push back"
+        >push_back</a
+      ></span
+    >,
+    <span class="t-lc"
+      ><a
+        href="emplace_front"
+        title="containerofunique/deque_of_unique/emplace front"
+        >emplace_front</a
+      ></span
+    >
+    and
+    <span class="t-lc"
+      ><a
+        href="emplace_back"
+        title="containerofunique/deque_of_unique/emplace back"
+        >emplace_back</a
+      ></span
+    >
+    do not invalidate any references to elements of the deque.
+  </li>
+  <li>
+    When erasing at either end of the deque, references to non-erased elements
+    are not invalidated by
+    <span class="t-lc"
+      ><a href="/erase" title="containerofunique/deque_of_unique/erase"
+        >erase</a
+      ></span
+    >,
+    <span class="t-lc"
+      ><a href="pop_front" title="containerofunique/deque_of_unique/pop front"
+        >pop_front</a
+      ></span
+    >
+    and
+    <span class="t-lc"
+      ><a href="pop_back" title="containerofunique/deque_of_unique/pop back"
+        >pop_back</a
+      ></span
+    >.
+  </li>
+</ul>
 <h3>
   <span class="mw-headline" id="Member types"> Member types</span>
 </h3>
