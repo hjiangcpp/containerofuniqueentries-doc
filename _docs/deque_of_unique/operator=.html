@@ -34,6 +34,56 @@ title: operator=
     <tr class="t-dcl t-since-cxx11 t-until-cxx17">
       <td>
         <div>
+          <span id="Version_2"></span
+          ><span class="mw-geshi cpp source-cpp"
+            >deque_of_unique<span class="sy3">&amp;</span> operator<span
+              class="sy1"
+              >=</span
+            ><span class="br0">(</span> deque_of_unique<span class="sy3"
+              >&amp;&amp;</span
+            >
+            other <span class="br0">)</span><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td class="t-dcl-nopad"></td>
+      <td>
+        <span class="t-mark-rev t-since-cxx11">(since C++11)</span> <br /><span
+          class="t-mark-rev t-until-cxx17"
+          >(until C++17)</span
+        >
+      </td>
+    </tr>
+    <tr class="t-dcl t-since-cxx17">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            >deque_of_unique<span class="sy3">&amp;</span> operator<span
+              class="sy1"
+              >=</span
+            ><span class="br0">(</span> deque_of_unique<span class="sy3"
+              >&amp;&amp;</span
+            >
+            other <span class="br0">)</span> <span class="kw1">noexcept</span
+            ><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td class="t-dcl-nopad"></td>
+      <td>
+        <span class="t-mark-rev t-since-cxx17">(since C++17)</span> <br />
+      </td>
+    </tr>
+  </tbody>
+  <tbody class="t-dcl-rev t-dcl-rev-num">
+    <tr class="t-dcl-rev-aux">
+      <td></td>
+      <td rowspan="142">(2)</td>
+      <td></td>
+    </tr>
+    <tr class="t-dcl t-since-cxx11 t-until-cxx17">
+      <td>
+        <div>
           <span class="mw-geshi cpp source-cpp"
             >deque_of_unique<span class="sy3">&amp;</span> operator<span
               class="sy1"
@@ -79,7 +129,18 @@ title: operator=
 </table>
 <p>Replaces the contents of the container.</p>
 <div class="t-li1"><span class="t-li">1)</span> Copy assignment operator.</div>
-<div class="t-li1"><span class="t-li">2)</span> Move assignment operator.</div>
+<div class="t-li1">
+  <span class="t-li">2)</span> Move assignment operator. Replaces the contents
+  with those of
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">other</span></span>
+  using move semantics (i.e. the data in
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">other</span></span> is
+  moved from
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">other</span></span>
+  into this container).
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">other</span></span> is
+  in a valid but unspecified state afterwards.
+</div>
 <div class="t-li1">
   <span class="t-li">3)</span> Replaces the contents with those identified by
   initializer list
