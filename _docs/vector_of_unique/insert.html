@@ -96,11 +96,83 @@ title: insert
   >.
 </div>
 <div class="t-li1">
+  <span class="t-li"></span> If any of the following conditions is satisfied,
+  the behavior is undefined:
+  <ul>
+    <li>
+      <code>T</code> is not
+      <a
+        href="/w/cpp/named_req/CopyInsertable"
+        title="cpp/named req/CopyInsertable"
+        ><span
+          style="
+            font-family: Georgia, 'DejaVu Serif', serif;
+            font-style: italic;
+          "
+          >CopyInsertable</span
+        ></a
+      >
+      into <code>vector_of_unique</code>.
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <code>T</code> is not
+      <a
+        href="/w/cpp/named_req/CopyAssignable"
+        title="cpp/named req/CopyAssignable"
+        ><span
+          style="
+            font-family: Georgia, 'DejaVu Serif', serif;
+            font-style: italic;
+          "
+          >CopyAssignable</span
+        ></a
+      >.
+    </li>
+  </ul>
+</div>
+<div class="t-li1">
   <span class="t-li">2)</span> Inserts
   <span class="t-c"><span class="mw-geshi cpp source-cpp">value</span></span>
   before
   <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span
   >, possibly using move semantics.
+</div>
+<div class="t-li1">
+  <span class="t-li"></span> If any of the following conditions is satisfied,
+  the behavior is undefined:
+  <ul>
+    <li>
+      <code>T</code> is not
+      <a
+        href="/w/cpp/named_req/MoveInsertable"
+        title="cpp/named req/MoveInsertable"
+        ><span
+          style="
+            font-family: Georgia, 'DejaVu Serif', serif;
+            font-style: italic;
+          "
+          >MoveInsertable</span
+        ></a
+      >
+      into <code>vector_of_unique</code>.
+    </li>
+    <li>
+      <code>T</code> is not
+      <a
+        href="/w/cpp/named_req/MoveAssignable"
+        title="cpp/named req/MoveAssignable"
+        ><span
+          style="
+            font-family: Georgia, 'DejaVu Serif', serif;
+            font-style: italic;
+          "
+          >MoveAssignable</span
+        ></a
+      >.
+    </li>
+  </ul>
 </div>
 <div class="t-li1">
   <span class="t-li">3)</span><span class="t-li" style="display: none">4)</span
@@ -118,22 +190,126 @@ title: insert
   >.
 </div>
 <div class="t-li1">
-  <span class="t-li"></span> If
-  <span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span>
-  and
-  <span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span> are
-  iterators into
-  <span class="t-c"
-    ><span class="mw-geshi cpp source-cpp"
-      ><span class="sy2">*</span>this</span
-    ></span
-  >, the behavior is undefined.
+  <p>
+    This overload participates in overload resolution only if
+    <code>InputIt</code> satisfies the requirements of
+    <a href="/w/cpp/named_req/InputIterator" title="cpp/named req/InputIterator"
+      ><span
+        style="font-family: Georgia, 'DejaVu Serif', serif; font-style: italic"
+        >LegacyInputIterator</span
+      ></a
+    >.
+  </p>
+</div>
+<div class="t-li1">
+  <span class="t-li"></span> If any of the following conditions is satisfied,
+  the behavior is undefined:
+  <ul>
+    <li>
+      <code>T</code> is not
+      <a
+        href="/w/cpp/named_req/EmplaceConstructible"
+        title="cpp/named req/EmplaceConstructible"
+        ><span
+          style="
+            font-family: Georgia, 'DejaVu Serif', serif;
+            font-style: italic;
+          "
+          >EmplaceConstructible</span
+        ></a
+      >
+      into <code>vector_of_unique</code> from
+      <span class="t-c"
+        ><span class="mw-geshi cpp source-cpp"
+          ><span class="sy2">*</span>first</span
+        ></span
+      >.
+    </li>
+    <li>
+      <code>T</code> is not
+      <a
+        href="/w/cpp/named_req/MoveInsertable"
+        title="cpp/named req/MoveInsertable"
+        ><span
+          style="
+            font-family: Georgia, 'DejaVu Serif', serif;
+            font-style: italic;
+          "
+          >MoveInsertable</span
+        ></a
+      >
+      into <code>vector_of_unique</code>.
+    </li>
+    <li>
+      <code>T</code> does not satisfy the requirements of
+      <a
+        href="/w/cpp/named_req/MoveConstructible"
+        title="cpp/named req/MoveConstructible"
+        ><span
+          style="
+            font-family: Georgia, 'DejaVu Serif', serif;
+            font-style: italic;
+          "
+          >MoveConstructible</span
+        ></a
+      >,
+      <a
+        href="/w/cpp/named_req/MoveAssignable"
+        title="cpp/named req/MoveAssignable"
+        ><span
+          style="
+            font-family: Georgia, 'DejaVu Serif', serif;
+            font-style: italic;
+          "
+          >MoveAssignable</span
+        ></a
+      >
+      or
+      <a href="/w/cpp/named_req/Swappable" title="cpp/named req/Swappable"
+        ><span
+          style="
+            font-family: Georgia, 'DejaVu Serif', serif;
+            font-style: italic;
+          "
+          >Swappable</span
+        ></a
+      >.
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <span class="t-c"
+        ><span class="mw-geshi cpp source-cpp">first</span></span
+      >
+      or
+      <span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span>
+      are iterators into
+      <span class="t-c"
+        ><span class="mw-geshi cpp source-cpp"
+          ><span class="sy2">*</span>this</span
+        ></span
+      >.
+    </li>
+  </ul>
 </div>
 <div class="t-li1">
   <span class="t-li">4)</span> Inserts elements from initializer list
   <span class="t-c"><span class="mw-geshi cpp source-cpp">ilist</span></span>
   before
   <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span
+  >.
+</div>
+<div class="t-li1">
+  <span class="t-li"></span> Equivalent to
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      >insert<span class="br0">(</span>pos, ilist.<span class="me1">begin</span
+      ><span class="br0">(</span><span class="br0">)</span>, ilist.<span
+        class="me1"
+        >end</span
+      ><span class="br0">(</span><span class="br0">)</span
+      ><span class="br0">)</span></span
+    ></span
   >.
 </div>
 <p>
@@ -164,22 +340,6 @@ title: insert
     ></span
   >, in which case they are not invalidated.
 </p>
-<p>
-  If after the operation the new number of elements is greater than old
-  <span class="t-c"
-    ><a
-      href="https://en.cppreference.com/w/cpp/container/unordered_set/max_load_factor"
-      title="cpp/container/unordered set/max load factor"
-      ><code>max_load_factor()</code></a
-    ><code> *</code><code>&nbsp;</code
-    ><a
-      href="https://en.cppreference.com/w/cpp/container/unordered_set/bucket_count"
-      title="cpp/container/unordered set/bucket count"
-      ><code>bucket_count()</code></a
-    ></span
-  >
-  a rehashing takes place.
-</p>
 <h3><span class="mw-headline" id="Parameters">Parameters</span></h3>
 <table class="t-par-begin">
   <tbody>
@@ -208,153 +368,23 @@ title: insert
       <td>first, last</td>
       <td>-</td>
       <td>
-        the range of elements to insert, cannot be iterators into container for
-        which insert is called
+        the pair of iterators defining the
+        <a href="/w/cpp/iterator#Ranges" title="cpp/iterator">range</a> of
+        elements to insert
       </td>
     </tr>
     <tr class="t-par">
       <td>ilist</td>
       <td>-</td>
       <td>
-        <span class="t-lc">std::initializer_list</span> to insert the values
-        from
-      </td>
-    </tr>
-    <tr class="t-par-hitem">
-      <td colspan="3">Type requirements</td>
-    </tr>
-    <tr class="t-par-req">
-      <td colspan="3">
-        -
-        <div class="spacer"></div>
-        <code>T</code> must meet the requirements of
-        <a
-          href="http://en.cppreference.com/w/cpp/named_req/CopyAssignable"
-          title="cpp/named req/CopyAssignable"
-          ><span
-            style="
-              font-family: Georgia, 'DejaVu Serif', serif;
-              font-style: italic;
-            "
-            >CopyAssignable</span
-          ></a
+        <span class="t-lc"
+          ><a
+            href="/w/cpp/utility/initializer_list"
+            title="cpp/utility/initializer list"
+            >std::initializer_list</a
+          ></span
         >
-        and
-        <a
-          href="http://en.cppreference.com/w/cpp/named_req/CopyInsertable"
-          title="cpp/named req/CopyInsertable"
-          ><span
-            style="
-              font-family: Georgia, 'DejaVu Serif', serif;
-              font-style: italic;
-            "
-            >CopyInsertable</span
-          ></a
-        >
-        in order to use overload (1).
-      </td>
-    </tr>
-    <tr class="t-par-req">
-      <td colspan="3">
-        -
-        <div class="spacer"></div>
-        <code>T</code> must meet the requirements of
-        <a
-          href="http://en.cppreference.com/w/cpp/named_req/MoveAssignable"
-          title="cpp/named req/MoveAssignable"
-          ><span
-            style="
-              font-family: Georgia, 'DejaVu Serif', serif;
-              font-style: italic;
-            "
-            >MoveAssignable</span
-          ></a
-        >
-        and
-        <a
-          href="http://en.cppreference.com/w/cpp/named_req/MoveInsertable"
-          title="cpp/named req/MoveInsertable"
-          ><span
-            style="
-              font-family: Georgia, 'DejaVu Serif', serif;
-              font-style: italic;
-            "
-            >MoveInsertable</span
-          ></a
-        >
-        in order to use overload (2).
-      </td>
-    </tr>
-    <tr class="t-par-req">
-      <td colspan="3">
-        -
-        <div class="spacer"></div>
-        <code>T</code> must meet the requirements of
-        <a
-          href="http://en.cppreference.com/w/cpp/named_req/EmplaceConstructible"
-          title="cpp/named req/EmplaceConstructible"
-          ><span
-            style="
-              font-family: Georgia, 'DejaVu Serif', serif;
-              font-style: italic;
-            "
-            >EmplaceConstructible</span
-          ></a
-        >
-        in order to use overloads (3,4).
-      </td>
-    </tr>
-    <tr class="t-par-req">
-      <td colspan="3">
-        -
-        <div class="spacer"></div>
-        <code>T</code> must meet the requirements of
-        <a
-          href="http://en.cppreference.com/w/cpp/named_req/Swappable"
-          title="cpp/named req/Swappable"
-          ><span
-            style="
-              font-family: Georgia, 'DejaVu Serif', serif;
-              font-style: italic;
-            "
-            >Swappable</span
-          ></a
-        >,
-        <a
-          href="http://en.cppreference.com/w/cpp/named_req/MoveAssignable"
-          title="cpp/named req/MoveAssignable"
-          ><span
-            style="
-              font-family: Georgia, 'DejaVu Serif', serif;
-              font-style: italic;
-            "
-            >MoveAssignable</span
-          ></a
-        >,
-        <a
-          href="http://en.cppreference.com/w/cpp/named_req/MoveConstructible"
-          title="cpp/named req/MoveConstructible"
-          ><span
-            style="
-              font-family: Georgia, 'DejaVu Serif', serif;
-              font-style: italic;
-            "
-            >MoveConstructible</span
-          ></a
-        >
-        and
-        <a
-          href="http://en.cppreference.com/w/cpp/named_req/MoveInsertable"
-          title="cpp/named req/MoveInsertable"
-          ><span
-            style="
-              font-family: Georgia, 'DejaVu Serif', serif;
-              font-style: italic;
-            "
-            >MoveInsertable</span
-          ></a
-        >
-        in order to use overloads (3,4).
+        to insert the values from
       </td>
     </tr>
   </tbody>
@@ -428,7 +458,7 @@ title: insert
             <span class="texhtml" style="white-space: nowrap">O(N)</span>.
             <br />Worst case:
             <span class="texhtml" style="white-space: nowrap">O(N * M)</span>,
-            where M is the size of original deque_of_unique.</span
+            where M is the size of original vector_of_unique.</span
           >
         </div>
       </td>
