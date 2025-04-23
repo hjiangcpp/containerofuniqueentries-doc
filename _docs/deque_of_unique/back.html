@@ -25,14 +25,66 @@ title: back
   </tbody>
 </table>
 <p>Returns a reference to the last element in the container.</p>
-<p>
-  Calling back on an emtpy container causes
-  <a
-    href="https://en.cppreference.com/w/cpp/language/ub"
-    title="cpp/language/ub"
-    >undefined behavior</a
-  >.
-</p>
+<table class="t-rev-begin">
+  <tbody>
+    <tr class="t-rev t-until-cxx26">
+      <td>
+        <p>
+          If
+          <span class="t-lc"
+            ><a href="empty" title="containerofunique/deque_of_unique/empty"
+              >empty()</a
+            ></span
+          >
+          is
+          <span class="t-c"
+            ><span class="mw-geshi cpp source-cpp"
+              ><span class="kw2">true</span></span
+            ></span
+          >, the behavior is undefined.
+        </p>
+      </td>
+      <td><span class="t-mark-rev t-until-cxx26">(until C++26)</span></td>
+    </tr>
+    <tr class="t-rev t-since-cxx26">
+      <td>
+        <p>
+          If
+          <span class="t-lc"
+            ><a href="empty" title="containerofunique/deque_of_unique/empty"
+              >empty()</a
+            ></span
+          >
+          is
+          <span class="t-c"
+            ><span class="mw-geshi cpp source-cpp"
+              ><span class="kw2">true</span></span
+            ></span
+          >:
+        </p>
+        <ul>
+          <li>
+            If the implementation is
+            <a
+              href="/w/cpp/standard_library#Standard_library_hardening"
+              title="cpp/standard library"
+              >hardened</a
+            >, a
+            <a href="/w/cpp/language/contracts" title="cpp/language/contracts"
+              >contract violation</a
+            >
+            occurs. Moreover, if the contract-violation handler returns under
+            “observe” evaluation semantic, the behavior is undefined.
+          </li>
+          <li>
+            If the implementation is not hardened, the behavior is undefined.
+          </li>
+        </ul>
+      </td>
+      <td><span class="t-mark-rev t-since-cxx26">(since C++26)</span></td>
+    </tr>
+  </tbody>
+</table>
 <h3>
   <span class="mw-headline" id="Parameters">Parameters</span>
 </h3>
