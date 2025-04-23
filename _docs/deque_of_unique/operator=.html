@@ -187,8 +187,10 @@ title: operator=
     <tr class="t-rev t-until-cxx17">
       <td>
         <div class="t-li1">
-          <span class="t-li">1-3)</span> May throw implementation-defined
-          exceptions.
+          <span class="t-li">1-3)</span> May throw exceptions thrown by the
+          copy/move constructor or assignment operator of
+          <span class="t-c mw-geshi cpp source-cpp">T</span>, or by memory
+          allocation.
         </div>
       </td>
       <td></td>
