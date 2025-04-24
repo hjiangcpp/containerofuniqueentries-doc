@@ -132,42 +132,61 @@ title: emplace
       <td colspan="3">
         -
         <div class="spacer"></div>
-        <code>T (the container's element type)</code> must meet the requirements
-        of
-        <a
-          href="https://en.cppreference.com/w/cpp/named_req/MoveAssignable"
-          title="cpp/named req/MoveAssignable"
-          ><span
-            style="
-              font-family: Georgia, 'DejaVu Serif', serif;
-              font-style: italic;
-            "
-            >MoveAssignable</span
-          ></a
-        >,
-        <a
-          href="https://en.cppreference.com/w/cpp/named_req/MoveInsertable"
-          title="cpp/named req/MoveInsertable"
-          ><span
-            style="
-              font-family: Georgia, 'DejaVu Serif', serif;
-              font-style: italic;
-            "
-            >MoveInsertable</span
-          ></a
-        >
-        and
-        <a
-          href="https://en.cppreference.com/w/cpp/named_req/EmplaceConstructible"
-          title="cpp/named req/EmplaceConstructible"
-          ><span
-            style="
-              font-family: Georgia, 'DejaVu Serif', serif;
-              font-style: italic;
-            "
-            >EmplaceConstructible</span
-          ></a
-        >.
+        If any of the following conditions is satisfied, the behavior is
+        undefined:
+        <dl>
+          <dd>
+            <ul>
+              <li>
+                <code>T</code> is not
+                <a
+                  href="/w/cpp/named_req/EmplaceConstructible"
+                  title="cpp/named req/EmplaceConstructible"
+                  ><span
+                    style="
+                      font-family: Georgia, 'DejaVu Serif', serif;
+                      font-style: italic;
+                    "
+                    >EmplaceConstructible</span
+                  ></a
+                >
+                into <code>vector_of_unique</code> from
+                <span class="t-c"
+                  ><span class="mw-geshi cpp source-cpp">args...</span></span
+                >.
+              </li>
+              <li>
+                <code>T</code> is not
+                <a
+                  href="/w/cpp/named_req/MoveInsertable"
+                  title="cpp/named req/MoveInsertable"
+                  ><span
+                    style="
+                      font-family: Georgia, 'DejaVu Serif', serif;
+                      font-style: italic;
+                    "
+                    >MoveInsertable</span
+                  ></a
+                >
+                into <code>vector_of_unique</code>.
+              </li>
+              <li>
+                <code>T</code> is not
+                <a
+                  href="/w/cpp/named_req/MoveAssignable"
+                  title="cpp/named req/MoveAssignable"
+                  ><span
+                    style="
+                      font-family: Georgia, 'DejaVu Serif', serif;
+                      font-style: italic;
+                    "
+                    >MoveAssignable</span
+                  ></a
+                >.
+              </li>
+            </ul>
+          </dd>
+        </dl>
       </td>
     </tr>
   </tbody>
