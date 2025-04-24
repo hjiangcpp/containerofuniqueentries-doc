@@ -226,12 +226,15 @@ title: emplace
   <span class="mw-headline" id="Complexity">Complexity</span>
 </h3>
 <p>
-  Average case: Amortized linear in the lesser of the distances between
-  <span class="t-c"><span class="mw-geshi cpp source-cpp">pos </span></span> and
-  either of the ends of the container assuming no duplicates. If the element is
-  a duplicate, the complexity is
-  <span class="texhtml" style="white-space: nowrap">O(1)</span> since no
-  insertion occurs.<br />
+  Average case: Linear in the distance between
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span> and
+  <span class="t-lc"
+    ><a href="/w/cpp/container/vector/end" title="cpp/container/vector/end"
+      >end()</a
+    ></span
+  >
+  assuming no duplicate. If the element is a duplicate, the complexity is
+  <span class="texhtml" style="white-space: nowrap">O(1)</span>.<br />
   Worst case: linear in the size of the container.
 </p>
 <h3>Exceptions</h3>
