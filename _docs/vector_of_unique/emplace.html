@@ -1,0 +1,264 @@
+---
+last_modified_at: "2025-01-05 15:43:52 +0800"
+layout: vector_of_unique_method
+title: emplace
+---
+
+<table class="t-dcl-begin">
+  <tbody>
+    <tr class="t-dcl t-since-cxx11">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            ><span class="kw1">template</span><span class="sy1">&lt;</span>
+            <span class="kw1">class</span>... <span class="me1">Args</span>
+            <span class="sy1">&gt;</span><br />
+            <span class="mw-geshi cpp source-cpp"
+              ><span class="kw4">void</span> emplace<span class="br0">(</span>
+              const_iterator pos, Args<span class="sy3">&amp;&amp;</span>...
+              <span class="me1">args</span> <span class="br0">)</span
+              ><span class="sy4">;</span></span
+            ></span
+          >
+        </div>
+      </td>
+      <td>(1)</td>
+      <td class="t-mark-rev t-since-cxx11-untill-cxx17">(Untill C++17)</td>
+    </tr>
+    <tr class="t-dcl t-since-cxx11">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            ><span class="kw1">template</span><span class="sy1">&lt;</span>
+            <span class="kw1">class</span>... <span class="me1">Args</span>
+            <span class="sy1">&gt;</span><br />
+            <span class="mw-geshi cpp source-cpp"
+              ><span class="t-lc">std::pair</span
+              ><span class="sy1">&lt;</span>const_iterator, bool<span
+                class="sy1"
+                >&gt;</span
+              >
+              emplace<span class="br0">(</span> const_iterator pos, Args<span
+                class="sy3"
+                >&amp;&amp;</span
+              >... <span class="me1">args</span> <span class="br0">)</span
+              ><span class="sy4">;</span></span
+            ></span
+          >
+        </div>
+      </td>
+      <td>(2)</td>
+      <td class="t-mark-rev t-since-cxx17">(Since C++17)</td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  Inserts a new element into the container directly before
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span
+  >.
+</p>
+<p>
+  The element is constructed through
+  <span class="t-lc"
+    ><a
+      href="https://en.cppreference.com/w/cpp/memory/allocator_traits/construct"
+      title="cpp/memory/allocator traits/construct"
+      >std::allocator_traits::construct</a
+    ></span
+  >, which typically uses placement-new to construct the element in-place at a
+  location provided by the container. However, if the required location has been
+  occupied by an existing element, the inserted element is constructed at
+  another location at first, and then move assigned into the required location.
+</p>
+<p>
+  The arguments
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">args...</span></span>
+  are forwarded to the constructor as
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      ><a href="http://en.cppreference.com/w/cpp/utility/forward"
+        ><span class="kw1125">std::<span class="me2">forward</span></span></a
+      ><span class="sy1">&lt;</span>Args<span class="sy1">&gt;</span
+      ><span class="br0">(</span>args<span class="br0">)</span>...</span
+    ></span
+  >.
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">args...</span></span>
+  may directly or indirectly refer to a value in the container.
+</p>
+<p>
+  If after the operation the new
+  <a
+    href="{{ '/_docs/vector_of_unique/size.html' | relative_url }}"
+    title="vector_of_unique/size"
+    ><code>size()</code></a
+  >
+  is greater than old
+  <a
+    href="{{ '/_docs/vector_of_unique/capacity.html' | relative_url }}"
+    title="vector_of_unique/capacity"
+    ><code>capacity()</code></a
+  >
+  a reallocation takes place, in which case all iterators (including the
+  <a
+    href="{{ '/_docs/vector_of_unique/cend.html' | relative_url }}"
+    title="vector_of_unique/cend"
+    ><code>cend()</code></a
+  >
+  iterator) and all references to the elements are invalidated. Otherwise, only
+  the iterators and references before the insertion point remain valid.
+</p>
+<h3><span class="mw-headline" id="Parameters">Parameters</span></h3>
+<table class="t-par-begin">
+  <tbody>
+    <tr class="t-par">
+      <td>pos</td>
+      <td>-</td>
+      <td>iterator before which the new element will be constructed</td>
+    </tr>
+    <tr class="t-par">
+      <td>args</td>
+      <td>-</td>
+      <td>arguments to forward to the constructor of the element</td>
+    </tr>
+    <tr class="t-par-hitem">
+      <td colspan="3">Type requirements</td>
+    </tr>
+    <tr class="t-par-req">
+      <td colspan="3">
+        -
+        <div class="spacer"></div>
+        If any of the following conditions is satisfied, the behavior is
+        undefined:
+        <dl>
+          <dd>
+            <ul>
+              <li>
+                <code>T</code> is not
+                <a
+                  href="/w/cpp/named_req/EmplaceConstructible"
+                  title="cpp/named req/EmplaceConstructible"
+                  ><span
+                    style="
+                      font-family: Georgia, 'DejaVu Serif', serif;
+                      font-style: italic;
+                    "
+                    >EmplaceConstructible</span
+                  ></a
+                >
+                into <code>vector_of_unique</code> from
+                <span class="t-c"
+                  ><span class="mw-geshi cpp source-cpp">args...</span></span
+                >.
+              </li>
+              <li>
+                <code>T</code> is not
+                <a
+                  href="/w/cpp/named_req/MoveInsertable"
+                  title="cpp/named req/MoveInsertable"
+                  ><span
+                    style="
+                      font-family: Georgia, 'DejaVu Serif', serif;
+                      font-style: italic;
+                    "
+                    >MoveInsertable</span
+                  ></a
+                >
+                into <code>vector_of_unique</code>.
+              </li>
+              <li>
+                <code>T</code> is not
+                <a
+                  href="/w/cpp/named_req/MoveAssignable"
+                  title="cpp/named req/MoveAssignable"
+                  ><span
+                    style="
+                      font-family: Georgia, 'DejaVu Serif', serif;
+                      font-style: italic;
+                    "
+                    >MoveAssignable</span
+                  ></a
+                >.
+              </li>
+            </ul>
+          </dd>
+        </dl>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3><span class="mw-headline" id="Return_value">Return value</span></h3>
+<div class="t-li1"><span class="t-li">1)</span>None.</div>
+<div class="t-li1">
+  <span class="t-li">2)</span>
+  The function returns a
+  <span class="t-c mw-geshi cpp source-cpp">
+    <span class="kw1125">std::<span class="me2">pair</span></span
+    ><span class="sy1">(</span>const_iterator, bool<span class="sy1"
+      >&gt;</span
+    ></span
+  >:
+  <br />
+  - first: an optional reference wrapper to the inserted element if the
+  insertion is successful; otherwise,
+  <span class="t-c mw-geshi cpp source-cpp">std::nullopt</span> if the element
+  already exists in the set.
+  <br />
+  - second:
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      ><span class="kw2">true</span></span
+    ></span
+  >
+  if the insertion is successful; otherwise,
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      ><span class="kw2">false</span></span
+    ></span
+  >
+  if the element already exists in the set.
+</div>
+<h3>
+  <span class="mw-headline" id="Complexity">Complexity</span>
+</h3>
+<p>
+  Average case: Linear in the distance between
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span> and
+  <span class="t-lc"
+    ><a href="/w/cpp/container/vector/end" title="cpp/container/vector/end"
+      >end()</a
+    ></span
+  >
+  assuming no duplicate. If the element is a duplicate, the complexity is
+  <span class="texhtml" style="white-space: nowrap">O(1)</span>.<br />
+  Worst case: linear in the size of the container.
+</p>
+<h3>Exceptions</h3>
+<p>
+  If an exception is thrown for any reason, this function has no effect (<a
+    href="https://en.cppreference.com/w/cpp/language/exceptions#Exception_safety"
+    title="cpp/language/exceptions"
+    >strong exception safety guarantee</a
+  >).
+</p>
+<p>
+  If an exception is thrown other than by the copy constructor, move
+  constructor, assignment operator, or move assignment operator of
+  <code>T</code>, or if an exception is thrown while <code>emplace</code> is
+  used to insert a single element at the end and <code>T</code> is either
+  <a
+    href="https://en.cppreference.com/w/cpp/named_req/CopyInsertable"
+    title="cpp/named req/CopyInsertable"
+    ><span
+      style="font-family: Georgia, 'DejaVu Serif', serif; font-style: italic"
+      >CopyInsertable</span
+    ></a
+  >
+  or nothrow move constructible, there are no effects (strong exception
+  guarantee).
+</p>
+<p>Otherwise, the effects are unspecified.</p>
