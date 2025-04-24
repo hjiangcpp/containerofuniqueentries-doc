@@ -511,11 +511,20 @@ title: insert
 <ul>
   <li>the move assignment operator of <code>T</code>,</li>
 </ul>
-<p>this function has no effect (strong exception guarantee).</p>
+<p>
+  this function has no effect (<a
+    href="https://en.cppreference.com/w/cpp/language/exceptions#Exception_safety"
+    title="cpp/language/exceptions"
+    >strong exception safety guarantee</a
+  >).
+</p>
 <p>
   If an exception is thrown when inserting a single element at either end, this
-  function has no effect (strong exception guarantee). Otherwise, if an
-  exception is thrown by the move constructor of a non-<a
+  function has no effect (<a
+    href="https://en.cppreference.com/w/cpp/language/exceptions#Exception_safety"
+    title="cpp/language/exceptions"
+    >strong exception safety guarantee</a
+  >). Otherwise, if an exception is thrown by the move constructor of a non-<a
     href="/w/cpp/named_req/CopyInsertable"
     title="cpp/named req/CopyInsertable"
     ><span
