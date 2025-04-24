@@ -55,15 +55,21 @@ title: push_back
   element.
 </div>
 <p>
-  All iterators (including the
-  <span class="t-lc"
-    ><a
-      href="{{ '/_docs/vector_of_unique/cend' | relative_url }}"
-      title="containerofunique/vector_of_unique/crend"
-      >cend()</a
-    ></span
+  If after the operation the new
+  <a href="size" title="containerofunique/vector_of_unique/size"
+    ><code>size()</code></a
   >
-  iterator) are invalidated. No references are invalidated.
+  is greater than the old capacity, a reallocation takes place, in which case
+  all iterators (including the
+  <a href="cend" title="containerofunique/vector_of_unique/cend"
+    ><code>cend()</code></a
+  >
+  iterator) and all references to the elements are invalidated. Otherwise only
+  the
+  <a href="cend" title="containerofunique/vector_of_unique/cend"
+    ><code>end()</code></a
+  >
+  iterator is invalidated.
 </p>
 <p></p>
 <h3>
@@ -142,7 +148,10 @@ title: push_back
 <h3>
   <span class="mw-headline" id="Complexity">Complexity</span>
 </h3>
-<p>Constant.</p>
+<p>
+  Average case: constant.<br />
+  Worst case: linear in the size of the current container.
+</p>
 <h3>Exceptions</h3>
 <p>
   If an exception is thrown for any reason, this function has no effect (<a
