@@ -71,16 +71,42 @@ title: swap
       </td>
       <td><span class="t-mark-rev t-until-cxx17">(until C++17)</span></td>
     </tr>
+    <tr class="t-rev t-since-cxx17">
+      <td>
+        <div class="t-noexcept-full">
+          <a
+            href="/w/cpp/language/noexcept_spec"
+            title="cpp/language/noexcept spec"
+            ><tt>noexcept</tt></a
+          >
+          specification:&nbsp;&nbsp;
+          <div class="t-noexcept-box">
+            <span class="t-cc"
+              ><span class="mw-geshi cpp source-cpp">
+                <p>
+                  <a href="http://en.cppreference.com/w/cpp/types/is_swappable"
+                    ><span class="kw580"
+                      >std::<span class="me2">is_nothrow_swappable</span></span
+                    ></a
+                  ><span class="sy1">&lt;</span>Hash<span class="sy1">&gt;</span
+                  ><span class="sy4">::</span><span class="me2">value</span
+                  ><br />
+                </p>
+                <span class="sy3">&amp;&amp;</span>
+                <a href="http://en.cppreference.com/w/cpp/types/is_swappable"
+                  ><span class="kw580"
+                    >std::<span class="me2">is_nothrow_swappable</span></span
+                  ></a
+                ><span class="sy1">&lt;</span>key_equal<span class="sy1"
+                  >&gt;</span
+                ><span class="sy4">::</span><span class="me2">value</span
+                ><span class="br0">)</span></span
+              ></span
+            >
+          </div>
+        </div>
+      </td>
+      <td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td>
+    </tr>
   </tbody>
 </table>
-<div class="t-li1">
-  <span class="t-li">2)</span>
-  If the allocator or key type does not support
-  <span class="t-c mw-geshi cpp source-cpp">noexcept</span>, the exceptions
-  thrown by
-  <span class="t-c mw-geshi cpp source-cpp">std::vector::swap</span> or
-  <span class="t-c mw-geshi cpp source-cpp">std::unordered_set::swap</span> may
-  propagate. However, these cases are rare when using the default allocator and
-  the move constructor of <span class="t-c mw-geshi cpp source-cpp">T</span> is
-  <span class="t-c mw-geshi cpp source-cpp">noexcept</span>.
-</div>
