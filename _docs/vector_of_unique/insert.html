@@ -425,13 +425,22 @@ title: insert
       <td>
         <div>
           <span class="t-li4"
-            >Average case: linear in the lesser of the distances between
-            <span class="t-c"
-              ><span class="mw-geshi cpp source-cpp">pos </span></span
-            >
-            and either of the ends of the container assuming no duplicates. If
-            the elements is a duplicate, the complexity is
+            >Best case: If the element is a duplicate, the complexity is
             <span class="texhtml" style="white-space: nowrap">O(1)</span>.
+            <br />Average case: If reallocation happens, linear in the number of
+            elements of the vector after insertion; otherwise, linear in the
+            number of elements inserted plus
+            <span class="t-c"
+              ><span class="mw-geshi cpp source-cpp"
+                ><a href="http://en.cppreference.com/w/cpp/iterator/distance"
+                  ><span class="kw679"
+                    >std::<span class="me2">distance</span></span
+                  ></a
+                ><span class="br0">(</span>pos, end<span class="br0">(</span
+                ><span class="br0">)</span><span class="br0">)</span></span
+              ></span
+            >
+            if any element is inserted.
             <br />
             Worst case: linear in the size of the container.
           </span>
@@ -443,9 +452,13 @@ title: insert
       <td>
         <div>
           <span class="t-li4"
-            >Average case:
-            <span class="texhtml" style="white-space: nowrap">O(N + M)</span>
-            assuming no duplicates, , where N is
+            >Best case: If the elements are all duplicates, the complexity is
+            <span class="texhtml" style="white-space: nowrap">O(N)</span>.
+            <br />
+            Average case: between
+            <span class="texhtml" style="white-space: nowrap">O(N)</span> and
+            <span class="texhtml" style="white-space: nowrap">O(N * M)</span>,
+            where N is
             <span class="mw-geshi cpp source-cpp"
               ><a href="http://en.cppreference.com/w/cpp/iterator/distance"
                 ><span class="kw678"
@@ -454,9 +467,7 @@ title: insert
               ><span class="br0">(</span>first, last<span class="br0"
                 >)</span
               ></span
-            >. If the elements are all duplicates, the complexity is
-            <span class="texhtml" style="white-space: nowrap">O(N)</span>.
-            <br />Worst case:
+            >. <br />Worst case:
             <span class="texhtml" style="white-space: nowrap">O(N * M)</span>,
             where M is the size of original vector_of_unique.</span
           >
@@ -468,13 +479,16 @@ title: insert
       <td>
         <div>
           <span class="t-li4"
-            >Average case:
-            <span class="texhtml" style="white-space: nowrap">O(N + M)</span>
-            assuming no duplicates, where N is the size of
-            <span class="mw-geshi cpp source-cpp">ilist</span>. If the elements
-            are all duplicates, the complexity is
+            >Best case: If the elements are all duplicates, the complexity is
             <span class="texhtml" style="white-space: nowrap">O(N)</span>.
-            <br />Worst case:
+            <br />
+            Average case: between
+            <span class="texhtml" style="white-space: nowrap">O(N + M)</span>
+            and
+            <span class="texhtml" style="white-space: nowrap">O(N + M)</span>
+            , where N is the size of
+            <span class="mw-geshi cpp source-cpp">ilist</span>. <br />Worst
+            case:
             <span class="texhtml" style="white-space: nowrap">O(N * M)</span
             >.</span
           >
@@ -488,20 +502,71 @@ title: insert
   </tbody>
 </table>
 <h3>Exceptions</h3>
-<div class="t-li1">
-  <span class="t-li">1,2)</span>
-  If an exception is thrown by insertion, the insertion has no effect (<a
+<p>If an exception is thrown other than by</p>
+<ul>
+  <li>the copy constructor of <code>T</code>,</li>
+</ul>
+<ul>
+  <li>the move constructor of <code>T</code>,</li>
+</ul>
+<ul>
+  <li>the copy assignment operator of <code>T</code>,</li>
+</ul>
+<ul>
+  <li>the move assignment operator of <code>T</code>,</li>
+</ul>
+<ul>
+  <li>any InputIt operation,</li>
+</ul>
+<p>
+  this function has no effect (<a
     href="https://en.cppreference.com/w/cpp/language/exceptions#Exception_safety"
     title="cpp/language/exceptions"
     >strong exception safety guarantee</a
   >).
-</div>
-<div class="t-li1">
-  <span class="t-li">3,4)</span>
-  If an exception is thrown, already inserted elements remain in the container,
-  and no further insertions occur (<a
+</p>
+<p>
+  If an exception is thrown when inserting a single element at the end, and
+  <code>T</code> is
+  <a href="/w/cpp/named_req/CopyInsertable" title="cpp/named req/CopyInsertable"
+    ><span
+      style="font-family: Georgia, 'DejaVu Serif', serif; font-style: italic"
+      >CopyInsertable</span
+    ></a
+  >
+  into
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      ><span class="sy2">*</span>this</span
+    ></span
+  >
+  or
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      ><a href="http://en.cppreference.com/w/cpp/types/is_move_constructible"
+        ><span class="kw550"
+          >std::<span class="me2">is_nothrow_move_constructible</span></span
+        ></a
+      ><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span
+      ><span class="sy4">::</span><span class="me2">value</span></span
+    ></span
+  >
+  is
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      ><span class="kw2">true</span></span
+    ></span
+  >, this function has no effect (<a
     href="https://en.cppreference.com/w/cpp/language/exceptions#Exception_safety"
     title="cpp/language/exceptions"
-    >basic exception safety guarantee</a
-  >).
-</div>
+    >strong exception safety guarantee</a
+  >). Otherwise, if an exception is thrown by the move constructor of a non-<a
+    href="/w/cpp/named_req/CopyInsertable"
+    title="cpp/named req/CopyInsertable"
+    ><span
+      style="font-family: Georgia, 'DejaVu Serif', serif; font-style: italic"
+      >CopyInsertable</span
+    ></a
+  >
+  <code>T</code>, the effects are unspecified.
+</p>
