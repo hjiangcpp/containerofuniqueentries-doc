@@ -1,0 +1,63 @@
+---
+last_modified_at: "2026-03-21 00:00:00 +0800"
+layout: vector_of_unique_method
+title: assign_range
+---
+
+<table class="t-dcl-begin">
+  <tbody>
+    <tr class="t-dcl t-since-cxx23">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            ><span class="kw1">template</span><span class="sy1">&lt;</span>
+            <span class="kw1">class</span> R <span class="sy1">&gt;</span><br />
+            <span class="kw4">void</span> assign_range<span class="br0">(</span>R<span class="sy3">&amp;&amp;</span> rng<span class="br0">)</span><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(1)</td>
+      <td><span class="t-mark-rev t-since-cxx23">(since C++23)</span></td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Replaces the contents of the container with the unique elements from the range
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">rng</span></span>.
+  Intra-range duplicates are silently skipped. All iterators and references to
+  the elements are invalidated.
+</p>
+<p>
+  Only available when
+  <span class="mw-geshi cpp source-cpp">__cplusplus &gt;= 202302L</span>.
+</p>
+<h3>
+  <span class="mw-headline" id="Parameters">Parameters</span>
+</h3>
+<table class="t-par-begin">
+  <tbody>
+    <tr class="t-par">
+      <td>rng</td>
+      <td>-</td>
+      <td>a range of elements to assign from</td>
+    </tr>
+  </tbody>
+</table>
+<h3>
+  <span class="mw-headline" id="Return_value">Return value</span>
+</h3>
+<p>(none)</p>
+<h3>
+  <span class="mw-headline" id="Complexity">Complexity</span>
+</h3>
+<p>
+  Average case: linear in the size of
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">rng</span></span>.
+  Worst case: quadratic.
+</p>

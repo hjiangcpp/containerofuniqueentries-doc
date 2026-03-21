@@ -1,0 +1,99 @@
+---
+last_modified_at: "2026-03-21 00:00:00 +0800"
+layout: deque_of_unique_method
+title: equal_range
+---
+
+<table class="t-dcl-begin">
+  <tbody>
+    <tr class="t-dcl t-since-cxx11">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            ><a
+              href="https://en.cppreference.com/w/cpp/utility/pair"
+              title="std::pair"
+              ><span class="kw1773">std::<span class="me2">pair</span></span></a
+            ><span class="sy1">&lt;</span>const_iterator, const_iterator<span
+              class="sy1"
+              >&gt;</span
+            >
+            equal_range<span class="br0">(</span>
+            <span class="kw4">const</span> Key<span class="sy3">&amp;</span> key
+            <span class="br0">)</span> <span class="kw4">const</span
+            ><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(1)</td>
+      <td></td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="t-li1">
+  <span class="t-li">1)</span> Returns a range containing all elements with key
+  equivalent to
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">key</span></span>.
+  Since all elements in the container are unique, the returned range contains at
+  most one element.
+</div>
+<h3>
+  <span class="mw-headline" id="Parameters">Parameters</span>
+</h3>
+<table class="t-par-begin">
+  <tbody>
+    <tr class="t-par">
+      <td>key</td>
+      <td>-</td>
+      <td>key value of the elements to search for</td>
+    </tr>
+  </tbody>
+</table>
+<h3>
+  <span class="mw-headline" id="Return_value">Return value</span>
+</h3>
+<p>
+  A
+  <span class="t-lc"
+    ><a
+      href="https://en.cppreference.com/w/cpp/utility/pair"
+      title="std::pair"
+      >std::pair</a
+    ></span
+  >
+  of
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp">const_iterator</span></span
+  >s. Since all elements are unique, the range is either
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">{it, it+1}</span></span>
+  if an element with the given key is found, or
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      >{<a
+        href="{{ '/_docs/deque_of_unique/cend' | relative_url }}"
+        title="containerofunique/deque_of_unique/cend"
+        >cend()</a
+      >,
+      <a
+        href="{{ '/_docs/deque_of_unique/cend' | relative_url }}"
+        title="containerofunique/deque_of_unique/cend"
+        >cend()</a
+      >}</span
+    ></span
+  >
+  if not found.
+</p>
+<h3>
+  <span class="mw-headline" id="Complexity">Complexity</span>
+</h3>
+<p>
+  <span class="texhtml" style="white-space: nowrap">O(N)</span>, where
+  <span class="texhtml" style="white-space: nowrap">N</span> is the size of the
+  container.
+</p>

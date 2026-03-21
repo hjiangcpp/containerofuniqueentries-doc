@@ -872,6 +872,110 @@ title: deque_of_unique
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a
+              href="assign_range"
+              title="containerofunique/deque_of_unique/assign_range"
+            >
+              <span>assign_range</span>
+            </a>
+          </div>
+          <div>
+            <span class="t-lines"
+              ><span
+                ><span class="t-mark-rev t-since-cxx23">(C++23)</span></span
+              ></span
+            >
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;replaces contents with unique elements from a range&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a
+              href="insert_range"
+              title="containerofunique/deque_of_unique/insert_range"
+            >
+              <span>insert_range</span>
+            </a>
+          </div>
+          <div>
+            <span class="t-lines"
+              ><span
+                ><span class="t-mark-rev t-since-cxx23">(C++23)</span></span
+              ></span
+            >
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;inserts unique elements from a range before a position&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a
+              href="append_range"
+              title="containerofunique/deque_of_unique/append_range"
+            >
+              <span>append_range</span>
+            </a>
+          </div>
+          <div>
+            <span class="t-lines"
+              ><span
+                ><span class="t-mark-rev t-since-cxx23">(C++23)</span></span
+              ></span
+            >
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;appends unique elements from a range to the end&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a
+              href="prepend_range"
+              title="containerofunique/deque_of_unique/prepend_range"
+            >
+              <span>prepend_range</span>
+            </a>
+          </div>
+          <div>
+            <span class="t-lines"
+              ><span
+                ><span class="t-mark-rev t-since-cxx23">(C++23)</span></span
+              ></span
+            >
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;prepends unique elements from a range to the front&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
     <tr>
       <td colspan="2">
         <h5>
@@ -890,7 +994,9 @@ title: deque_of_unique
         </div>
       </td>
       <td>
-        &nbsp;finds element with specific key&nbsp;
+        &nbsp;finds element with specific key; supports heterogeneous lookup
+        (C++20) when <code>Hash::is_transparent</code> and
+        <code>KeyEqual::is_transparent</code> are defined&nbsp;
         <br />
         <span class="t-mark">(public member function)</span>
       </td>
@@ -916,7 +1022,29 @@ title: deque_of_unique
         </div>
       </td>
       <td>
-        &nbsp;checks if the container contains element with specific key&nbsp;
+        &nbsp;checks if the container contains element with specific key;
+        supports heterogeneous lookup (C++20) when
+        <code>Hash::is_transparent</code> and
+        <code>KeyEqual::is_transparent</code> are defined&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a
+              href="equal_range"
+              title="containerofunique/deque_of_unique/equal_range"
+            >
+              <span>equal_range</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;returns range of elements matching a specific key&nbsp;
         <br />
         <span class="t-mark">(public member function)</span>
       </td>
