@@ -1,5 +1,5 @@
 ---
-last_modified_at: "2025-01-05 13:20:43 +0800"
+last_modified_at: "2026-03-20 00:00:00 +0800"
 layout: deque_of_unique_method
 title: operator[]
 ---
@@ -10,7 +10,7 @@ title: operator[]
       <td>
         <div>
           <span class="mw-geshi cpp source-cpp"
-            >const_reference at<span class="br0">(</span> size_type pos
+            >const_reference operator<span class="br0">[</span><span class="br0">]</span><span class="br0">(</span> size_type pos
             <span class="br0">)</span> <span class="kw4">const</span
             ><span class="sy4">;</span></span
           >
@@ -31,16 +31,18 @@ title: operator[]
 </p>
 <p>
   If
-  <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span> is
-  not within the range of the container, an exception of type
-  <span class="t-lc"
-    ><a
-      href="https://en.cppreference.com/w/cpp/error/out_of_range"
-      title="cpp/error/out of range"
-      >std::out_of_range</a
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      >pos <span class="sy1">&lt;</span> size<span class="br0">(</span
+      ><span class="br0">)</span></span
     ></span
   >
-  is thrown.
+  is
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      ><span class="kw2">false</span></span
+    ></span
+  >, the behavior is undefined.
 </p>
 <p></p>
 <h3><span class="mw-headline" id="Parameters">Parameters</span></h3>
@@ -61,6 +63,4 @@ title: operator[]
 </h3>
 <p>Constant.</p>
 <h3>Exceptions</h3>
-<p class="t-li1">
-  <span class="t-li">1,3)</span> May throw implementation-defined exceptions.
-</p>
+<p>Throws nothing.</p>

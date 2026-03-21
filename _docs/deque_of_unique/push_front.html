@@ -1,5 +1,5 @@
 ---
-last_modified_at: "2025-01-04 13:13:57 +0800"
+last_modified_at: "2026-03-20 00:00:00 +0800"
 layout: deque_of_unique_method
 title: push_front
 ---
@@ -7,16 +7,29 @@ title: push_front
 <table class="t-dcl-begin">
   <tbody>
     <tr class="t-dcl">
-      <td class="t-dcl-nopad">
+      <td>
         <div>
-          <span class="mw-geshi cpp source-cpp"
-            ><span class="kw4">bool</span> push_front<span class="br0">(</span
-            ><span class="br0">)</span><span class="sy4">;</span></span
-          >
+          <span class="mw-geshi cpp source-cpp">
+            <span class="kw4">bool</span>&nbsp;push_front<span class="br0">(</span
+            ><span class="kw4">const</span>&nbsp;T<span class="sy3">&amp;</span
+            >&nbsp;value<span class="br0">)</span><span class="sy4">;</span>
+          </span>
         </div>
       </td>
-      <td class="t-dcl-nopad"></td>
-      <td class="t-dcl-nopad"></td>
+      <td><span class="number">(1)</span></td>
+    </tr>
+    <tr class="t-dcl">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp">
+            <span class="kw4">bool</span>&nbsp;push_front<span class="br0">(</span
+            >T<span class="sy3">&&</span>&nbsp;value<span class="br0"
+              >)</span
+            ><span class="sy4">;</span>
+          </span>
+        </div>
+      </td>
+      <td><span class="number">(2)</span></td>
     </tr>
     <tr class="t-dcl-sep">
       <td></td>
@@ -28,14 +41,26 @@ title: push_front
 <p>
   Prepends the given element
   <span class="t-c"><span class="mw-geshi cpp source-cpp">value</span></span> to
-  the beginning of the container.
+  the beginning of the container if it is not already present. This ensures that
+  all entries in the container remain unique.
 </p>
+<div class="t-li1">
+  <span class="t-li">1)</span> The new element is initialized as a copy of
+  <span class="t-c mw-geshi cpp source-cpp">value</span>.
+</div>
+<div class="t-li1">
+  <span class="t-li">2)</span>
+  <span class="t-c mw-geshi cpp source-cpp">value</span> is moved into the new
+  element.
+</div>
 <p>
   All iterators (including the
-  <a
-    href="{{ '/_docs/deque_of_unique/cend' | relative_url }}"
-    title="containerofunique/deque_of_unique/cend"
-    ><code>cend()</code></a
+  <span class="t-c mw-geshi cpp source-cpp"
+    ><a
+      href="{{ '/_docs/deque_of_unique/cend' | relative_url }}"
+      title="containerofunique/deque_of_unique/cend"
+      >cend()</a
+    ></span
   >
   iterator) are invalidated. No references are invalidated.
 </p>
@@ -45,9 +70,46 @@ title: push_front
 <table class="t-par-begin">
   <tbody>
     <tr class="t-par">
-      <td>value</td>
+      <td><strong>value</strong></td>
       <td>-</td>
       <td>the value of the element to prepend</td>
+    </tr>
+    <tr class="t-par-hitem">
+      <td colspan="3"><strong>Type Requirements</strong></td>
+    </tr>
+    <tr class="t-par-req">
+      <td colspan="3">
+        -&nbsp;T must meet the requirements of
+        <a
+          href="http://en.cppreference.com/w/cpp/named_req/CopyInsertable"
+          title="cpp/named req/CopyInsertable"
+          ><span
+            style="
+              font-family: Georgia, 'DejaVu Serif', serif;
+              font-style: italic;
+            "
+            >CopyInsertable</span
+          ></a
+        >
+        in order to use overload (1).
+      </td>
+    </tr>
+    <tr class="t-par-req">
+      <td colspan="3">
+        -&nbsp;T must meet the requirements of
+        <a
+          href="http://en.cppreference.com/w/cpp/named_req/MoveInsertable"
+          title="cpp/named req/MoveInsertable"
+          ><span
+            style="
+              font-family: Georgia, 'DejaVu Serif', serif;
+              font-style: italic;
+            "
+            >MoveInsertable</span
+          ></a
+        >
+        in order to use overload (2).
+      </td>
     </tr>
   </tbody>
 </table>
@@ -64,7 +126,7 @@ title: push_front
       ><span class="kw2">false</span></span
     ></span
   >
-  if the element already exists in the set.
+  if the element already exists in the container.
 </p>
 <h3>
   <span class="mw-headline" id="Complexity">Complexity</span>

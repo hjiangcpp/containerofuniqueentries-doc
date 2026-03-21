@@ -1,30 +1,11 @@
 ---
-last_modified_at: "2025-04-24 09:20:36 +0800"
+last_modified_at: "2026-03-20 00:00:00 +0800"
 layout: vector_of_unique_method
 title: emplace
 ---
 
 <table class="t-dcl-begin">
   <tbody>
-    <tr class="t-dcl t-since-cxx11">
-      <td>
-        <div>
-          <span class="mw-geshi cpp source-cpp"
-            ><span class="kw1">template</span><span class="sy1">&lt;</span>
-            <span class="kw1">class</span>... <span class="me1">Args</span>
-            <span class="sy1">&gt;</span><br />
-            <span class="mw-geshi cpp source-cpp"
-              ><span class="kw4">void</span> emplace<span class="br0">(</span>
-              const_iterator pos, Args<span class="sy3">&amp;&amp;</span>...
-              <span class="me1">args</span> <span class="br0">)</span
-              ><span class="sy4">;</span></span
-            ></span
-          >
-        </div>
-      </td>
-      <td>(1)</td>
-      <td class="t-mark-rev t-since-cxx11-untill-cxx17">(Untill C++17)</td>
-    </tr>
     <tr class="t-dcl t-since-cxx11">
       <td>
         <div>
@@ -47,8 +28,8 @@ title: emplace
           >
         </div>
       </td>
-      <td>(2)</td>
-      <td class="t-mark-rev t-since-cxx17">(Since C++17)</td>
+      <td>(1)</td>
+      <td class="t-dcl-nopad"></td>
     </tr>
     <tr class="t-dcl-sep">
       <td></td>
@@ -60,7 +41,7 @@ title: emplace
 <p>
   Inserts a new element into the container directly before
   <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span
-  >.
+  >, if an element with the same value does not already exist in the container.
 </p>
 <p>
   The element is constructed through
@@ -87,25 +68,18 @@ title: emplace
       ><span class="br0">(</span>args<span class="br0">)</span>...</span
     ></span
   >.
-  <span class="t-c"><span class="mw-geshi cpp source-cpp">args...</span></span>
-  may directly or indirectly refer to a value in the container.
 </p>
 <p>
-  If after the operation the new
+  If the insertion takes place and the new
   <a
-    href="{{ '/_docs/vector_of_unique/size.html' | relative_url }}"
+    href="{{ '/_docs/vector_of_unique/size' | relative_url }}"
     title="vector_of_unique/size"
     ><code>size()</code></a
   >
-  is greater than old
+  exceeds the old capacity, a reallocation takes place, in which case all
+  iterators (including the
   <a
-    href="{{ '/_docs/vector_of_unique/capacity.html' | relative_url }}"
-    title="vector_of_unique/capacity"
-    ><code>capacity()</code></a
-  >
-  a reallocation takes place, in which case all iterators (including the
-  <a
-    href="{{ '/_docs/vector_of_unique/cend.html' | relative_url }}"
+    href="{{ '/_docs/vector_of_unique/cend' | relative_url }}"
     title="vector_of_unique/cend"
     ><code>cend()</code></a
   >
@@ -132,124 +106,88 @@ title: emplace
       <td colspan="3">
         -
         <div class="spacer"></div>
-        If any of the following conditions is satisfied, the behavior is
-        undefined:
-        <dl>
-          <dd>
-            <ul>
-              <li>
-                <code>T</code> is not
-                <a
-                  href="/w/cpp/named_req/EmplaceConstructible"
-                  title="cpp/named req/EmplaceConstructible"
-                  ><span
-                    style="
-                      font-family: Georgia, 'DejaVu Serif', serif;
-                      font-style: italic;
-                    "
-                    >EmplaceConstructible</span
-                  ></a
-                >
-                into <code>vector_of_unique</code> from
-                <span class="t-c"
-                  ><span class="mw-geshi cpp source-cpp">args...</span></span
-                >.
-              </li>
-              <li>
-                <code>T</code> is not
-                <a
-                  href="/w/cpp/named_req/MoveInsertable"
-                  title="cpp/named req/MoveInsertable"
-                  ><span
-                    style="
-                      font-family: Georgia, 'DejaVu Serif', serif;
-                      font-style: italic;
-                    "
-                    >MoveInsertable</span
-                  ></a
-                >
-                into <code>vector_of_unique</code>.
-              </li>
-              <li>
-                <code>T</code> is not
-                <a
-                  href="/w/cpp/named_req/MoveAssignable"
-                  title="cpp/named req/MoveAssignable"
-                  ><span
-                    style="
-                      font-family: Georgia, 'DejaVu Serif', serif;
-                      font-style: italic;
-                    "
-                    >MoveAssignable</span
-                  ></a
-                >.
-              </li>
-            </ul>
-          </dd>
-        </dl>
+        <code>T (the container's element type)</code> must meet the requirements
+        of
+        <a
+          href="https://en.cppreference.com/w/cpp/named_req/MoveAssignable"
+          title="cpp/named req/MoveAssignable"
+          ><span
+            style="
+              font-family: Georgia, 'DejaVu Serif', serif;
+              font-style: italic;
+            "
+            >MoveAssignable</span
+          ></a
+        >,
+        <a
+          href="https://en.cppreference.com/w/cpp/named_req/MoveInsertable"
+          title="cpp/named req/MoveInsertable"
+          ><span
+            style="
+              font-family: Georgia, 'DejaVu Serif', serif;
+              font-style: italic;
+            "
+            >MoveInsertable</span
+          ></a
+        >
+        and
+        <a
+          href="https://en.cppreference.com/w/cpp/named_req/EmplaceConstructible"
+          title="cpp/named req/EmplaceConstructible"
+          ><span
+            style="
+              font-family: Georgia, 'DejaVu Serif', serif;
+              font-style: italic;
+            "
+            >EmplaceConstructible</span
+          ></a
+        >.
       </td>
     </tr>
   </tbody>
 </table>
 <h3><span class="mw-headline" id="Return_value">Return value</span></h3>
-<div class="t-li1"><span class="t-li">1)</span>None.</div>
-<div class="t-li1">
-  <span class="t-li">2)</span>
-  The function returns a
-  <span class="t-c mw-geshi cpp source-cpp">
-    <span class="kw1125">std::<span class="me2">pair</span></span
-    ><span class="sy1">(</span>const_iterator, bool<span class="sy1"
-      >&gt;</span
-    ></span
-  >:
-  <br />
-  - first: an optional reference wrapper to the inserted element if the
-  insertion is successful; otherwise,
-  <span class="t-c mw-geshi cpp source-cpp">std::nullopt</span> if the element
-  already exists in the set.
-  <br />
-  - second:
+<p>
+  A pair consisting of an iterator to the inserted element (or
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span> if
+  the element was not inserted) and a
+  <span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span>
+  value set to
   <span class="t-c"
     ><span class="mw-geshi cpp source-cpp"
       ><span class="kw2">true</span></span
     ></span
   >
-  if the insertion is successful; otherwise,
+  if the insertion took place, or
   <span class="t-c"
     ><span class="mw-geshi cpp source-cpp"
       ><span class="kw2">false</span></span
     ></span
   >
-  if the element already exists in the set.
-</div>
+  if the element already existed in the container.
+</p>
 <h3>
   <span class="mw-headline" id="Complexity">Complexity</span>
 </h3>
 <p>
-  Average case: Linear in the distance between
+  Average case: linear in the distance between
   <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span> and
-  <span class="t-lc"
-    ><a href="/w/cpp/container/vector/end" title="cpp/container/vector/end"
-      >end()</a
-    ></span
+  <a
+    href="{{ '/_docs/vector_of_unique/cend' | relative_url }}"
+    title="vector_of_unique/cend"
+    ><code>cend()</code></a
   >
-  assuming no duplicate. If the element is a duplicate, the complexity is
+  assuming no duplicates. If the element is a duplicate, the complexity is
   <span class="texhtml" style="white-space: nowrap">O(1)</span>.<br />
   Worst case: linear in the size of the container.
 </p>
 <h3>Exceptions</h3>
 <p>
-  If an exception is thrown for any reason, this function has no effect (<a
-    href="https://en.cppreference.com/w/cpp/language/exceptions#Exception_safety"
-    title="cpp/language/exceptions"
-    >strong exception safety guarantee</a
-  >).
-</p>
-<p>
-  If an exception is thrown other than by the copy constructor, move
-  constructor, assignment operator, or move assignment operator of
-  <code>T</code>, or if an exception is thrown while <code>emplace</code> is
-  used to insert a single element at the end and <code>T</code> is either
+  If an exception is thrown by insertion into the unordered set, the insertion
+  has no effect. If an exception is thrown other than by the copy constructor,
+  move constructor, assignment operator, or move assignment operator of
+  <code>T</code>, or if <code>emplace</code> is used to insert a single element
+  at the end and <code>T</code> is either
   <a
     href="https://en.cppreference.com/w/cpp/named_req/CopyInsertable"
     title="cpp/named req/CopyInsertable"
@@ -259,6 +197,5 @@ title: emplace
     ></a
   >
   or nothrow move constructible, there are no effects (strong exception
-  guarantee).
+  guarantee). Otherwise, the effects are unspecified.
 </p>
-<p>Otherwise, the effects are unspecified.</p>

@@ -1,5 +1,5 @@
 ---
-last_modified_at: "2025-01-04 13:19:27 +0800"
+last_modified_at: "2026-03-20 00:00:00 +0800"
 layout: deque_of_unique_main
 title: deque_of_unique
 ---
@@ -22,48 +22,40 @@ title: deque_of_unique
       <td></td>
       <td></td>
     </tr>
-
     <tr class="t-dcl">
       <td>
         <div>
-          <span class="mw-geshi cpp source-cpp">
-            <span class="kw1">template</span>
-            <span class="sy1"><</span>
-            <br />
+          <span class="mw-geshi cpp source-cpp"
+            ><span class="kw1">template</span><span class="sy1">&lt;</span><br />
             <p>
-              &nbsp;&nbsp;
-              <span class="kw1"> class</span>
-              &nbsp;T,
-              <br />
-              &nbsp;&nbsp;
-              <span class="kw1"> class</span>
-              &nbsp;Hash&nbsp;
+              &#160; &#160; <span class="kw1">class</span> T,<br />
+              &#160; &#160; <span class="kw1">class</span> Hash
               <span class="sy1">=</span>
-              <span class="kw704">
-                <a href="https://en.cppreference.com/w/cpp/utility/hash"
-                  >std::hash</a
-                >
-              </span>
-              <br />
-              &nbsp;&nbsp;
-              <span class="kw1"> class</span>
-              &nbsp;KeyEqual&nbsp;
+              <a href="https://en.cppreference.com/w/cpp/utility/hash"
+                ><span class="kw704">std::<span class="me2">hash</span></span></a
+              ><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span>,<br />
+              &#160; &#160; <span class="kw1">class</span> KeyEqual
               <span class="sy1">=</span>
-              <span class="kw704">
-                <a
-                  href="https://en.cppreference.com/w/cpp/utility/functional/equal_to"
-                  >std::equal_to</a
-                >
-              </span>
-              <br />
-              <span class="sy1">></span>
-              <span class="kw1"> class</span>
-              deque_of_unique
-              <span class="sy4">;</span>
+              <a
+                href="https://en.cppreference.com/w/cpp/utility/functional/equal_to"
+                ><span class="kw704"
+                  >std::<span class="me2">equal_to</span></span
+                ></a
+              ><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span
+              ><br />
             </p>
-          </span>
+            <span class="sy1">&gt;</span>
+            <span class="kw1">class</span> deque_of_unique<span class="sy4"
+              >;</span
+            ></span
+          >
         </div>
       </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -84,7 +76,7 @@ title: deque_of_unique
       >std::unordered_set</a
     ></code
   >, the <code>deque_of_unique</code> ensures that all elements are unique and
-  can be accessed or modified from both ends. This makes it perfect for
+  can be accessed or modified from both ends. This makes it ideal for
   applications where maintaining order and preventing duplicates is essential.
 </p>
 <h3>
@@ -117,35 +109,63 @@ title: deque_of_unique
                   ></a
                 >, but many member functions impose stricter requirements.
               </td>
-              <td></td>
+              <td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
             </tr>
           </tbody>
         </table>
-        <p>
-          <span
-            class="editsection noprint plainlinks"
-            title="Edit this template"
-            ><a
-              rel="nofollow"
-              class="external text"
-              href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/param_list_T&amp;action=edit"
-              >[edit]</a
-            ></span
-          >
-        </p>
       </td>
     </tr>
     <tr class="t-par">
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>Hash</td>
+      <td>-</td>
+      <td>
+        A unary function object type that hashes a <code>Key</code>. The type
+        must meet the requirements of
+        <a
+          href="https://en.cppreference.com/w/cpp/named_req/Hash"
+          title="cpp/named req/Hash"
+          ><span
+            style="font-family: Georgia, 'DejaVu Serif', serif; font-style: italic"
+            >Hash</span
+          ></a
+        >. Defaults to
+        <span class="t-lc"
+          ><a
+            href="https://en.cppreference.com/w/cpp/utility/hash"
+            title="cpp/utility/hash"
+            >std::hash&lt;T&gt;</a
+          ></span
+        >.
+      </td>
+    </tr>
+    <tr class="t-par">
+      <td>KeyEqual</td>
+      <td>-</td>
+      <td>
+        A binary predicate that takes two arguments of the same type as the
+        elements and returns a <code>bool</code>. The type must meet the
+        requirements of
+        <a
+          href="https://en.cppreference.com/w/cpp/named_req/BinaryPredicate"
+          title="cpp/named req/BinaryPredicate"
+          ><span
+            style="font-family: Georgia, 'DejaVu Serif', serif; font-style: italic"
+            >BinaryPredicate</span
+          ></a
+        >. Defaults to
+        <span class="t-lc"
+          ><a
+            href="https://en.cppreference.com/w/cpp/utility/functional/equal_to"
+            title="cpp/utility/functional/equal to"
+            >std::equal_to&lt;T&gt;</a
+          ></span
+        >.
+      </td>
     </tr>
   </tbody>
 </table>
 <h3>
-  <span class="mw-headline" id="Iterator_invalidation"
-    >Iterator invalidation</span
-  >
+  <span class="mw-headline" id="Iterator_invalidation">Iterator invalidation</span>
 </h3>
 <table class="dsctable" style="font-size: 0.9em">
   <tbody>
@@ -165,14 +185,12 @@ title: deque_of_unique
           ></span
         >,
         <span class="t-lc"
-          ><a href="/w/cpp/algorithm/swap" title="cpp/algorithm/swap"
+          ><a href="https://en.cppreference.com/w/cpp/algorithm/swap" title="cpp/algorithm/swap"
             >std::swap</a
           ></span
         >
       </td>
-      <td>
-        The past-the-end iterator may be invalidated (implementation defined).
-      </td>
+      <td>The past-the-end iterator may be invalidated (implementation defined).</td>
     </tr>
     <tr>
       <td>
@@ -192,29 +210,22 @@ title: deque_of_unique
           ></span
         >,
         <span class="t-lc"
-          ><a
-            href="push_front"
-            title="containerofunique/deque_of_unique/push front"
+          ><a href="push_front" title="containerofunique/deque_of_unique/push_front"
             >push_front</a
           ></span
-        >,<br /><span class="t-lc"
-          ><a
-            href="push_back"
-            title="containerofunique/deque_of_unique/push back"
+        >,<br />
+        <span class="t-lc"
+          ><a href="push_back" title="containerofunique/deque_of_unique/push_back"
             >push_back</a
           ></span
         >,
         <span class="t-lc"
-          ><a
-            href="emplace_front"
-            title="containerofunique/deque_of_unique/emplace front"
+          ><a href="emplace_front" title="containerofunique/deque_of_unique/emplace_front"
             >emplace_front</a
           ></span
         >,
         <span class="t-lc"
-          ><a
-            href="emplace_back"
-            title="containerofunique/deque_of_unique/emplace back"
+          ><a href="emplace_back" title="containerofunique/deque_of_unique/emplace_back"
             >emplace_back</a
           ></span
         >
@@ -230,86 +241,62 @@ title: deque_of_unique
         >
       </td>
       <td>
-        If erasing at begin and the last element is not erased - only erased
+        If erasing at begin and the last element is not erased — only erased
         elements.<br />
-        If erasing at begin and the last element is also erased - erased
+        If erasing at begin and the last element is also erased — erased
         elements and the past-the-end iterator.<br />
-        <p>
-          If erasing at end - only erased elements and the past-the-end
-          iterator.<br />
-          Otherwise - all iterators are invalidated.<br />
-        </p>
+        If erasing at end — only erased elements and the past-the-end
+        iterator.<br />
+        Otherwise — all iterators are invalidated.
       </td>
     </tr>
     <tr>
       <td>
         <span class="t-lc"
-          ><a
-            href="/w/cpp/container/deque/pop_front"
-            title="cpp/container/deque/pop front"
+          ><a href="pop_front" title="containerofunique/deque_of_unique/pop_front"
             >pop_front</a
           ></span
         >,
         <span class="t-lc"
-          ><a
-            href="/w/cpp/container/deque/pop_back"
-            title="cpp/container/deque/pop back"
+          ><a href="pop_back" title="containerofunique/deque_of_unique/pop_back"
             >pop_back</a
           ></span
         >
       </td>
       <td>
         To the element erased.<br />
-        <p>The past-the-end iterator is also invalidated.</p>
+        The past-the-end iterator is also invalidated.
       </td>
     </tr>
   </tbody>
 </table>
 <h3>
-  <span class="mw-headline" id="Member types"> Member types</span>
+  <span class="mw-headline" id="Member_types">Member types</span>
 </h3>
 <table class="t-dsc-begin">
   <tbody>
     <tr class="t-dsc-hitem">
-      <td>Type</td>
+      <td>Member type</td>
       <td>Definition</td>
     </tr>
     <tr class="t-dsc">
-      <td>
-        <code>value_type</code>
-      </td>
-      <td>
-        <code>T</code>
-      </td>
+      <td><code>value_type</code></td>
+      <td><code>T</code></td>
     </tr>
     <tr class="t-dsc">
-      <td>
-        <code>key_type</code>
-      </td>
-      <td>
-        <code>T</code>
-      </td>
+      <td><code>key_type</code></td>
+      <td><code>T</code></td>
     </tr>
     <tr class="t-dsc">
-      <td>
-        <code>hasher</code>
-      </td>
-      <td>
-        <code>Hash</code>
-      </td>
+      <td><code>hasher</code></td>
+      <td><code>Hash</code></td>
     </tr>
     <tr class="t-dsc">
-      <td>
-        <code>key_equal</code>
-      </td>
-      <td>
-        <code>KeyEqual</code>
-      </td>
+      <td><code>key_equal</code></td>
+      <td><code>KeyEqual</code></td>
     </tr>
     <tr class="t-dsc">
-      <td>
-        <code>reference</code>
-      </td>
+      <td><code>reference</code></td>
       <td>
         <span class="mw-geshi cpp source-cpp"
           >value_type<span class="sy3">&amp;</span></span
@@ -317,21 +304,17 @@ title: deque_of_unique
       </td>
     </tr>
     <tr class="t-dsc">
+      <td><code>const_reference</code></td>
       <td>
-        <code>const_reference</code>
-      </td>
-      <td>
-        <span class="mw-geshi cpp source-cpp">
-          <span class="kw4">const</span>
-          value_type
-          <span class="sy3">&amp;</span></span
+        <span class="mw-geshi cpp source-cpp"
+          ><span class="kw4">const</span> value_type<span class="sy3"
+            >&amp;</span
+          ></span
         >
       </td>
     </tr>
     <tr class="t-dsc">
-      <td>
-        <code>deque_type</code>
-      </td>
+      <td><code>deque_type</code></td>
       <td>
         <code
           ><a
@@ -339,15 +322,11 @@ title: deque_of_unique
             title="std::deque"
             >std::deque</a
           ></code
-        >
-        <span class="sy1">&lt;</span><code>T</code
-        ><span class="sy1">&gt;</span>;
+        ><span class="sy1">&lt;</span><code>T</code><span class="sy1">&gt;</span>
       </td>
     </tr>
     <tr class="t-dsc">
-      <td>
-        <code>unordered_set_type</code>
-      </td>
+      <td><code>unordered_set_type</code></td>
       <td>
         <code
           ><a
@@ -361,86 +340,63 @@ title: deque_of_unique
       </td>
     </tr>
     <tr class="t-dsc">
-      <td>
-        <code>size_type</code>
-      </td>
-      <td>
-        <code>deque_type::size_type</code>
-      </td>
+      <td><code>size_type</code></td>
+      <td><code>deque_type::size_type</code></td>
     </tr>
     <tr class="t-dsc">
-      <td>
-        <code>iterator</code>
-      </td>
-      <td>
-        <code>deque_type::iterator</code>
-      </td>
+      <td><code>iterator</code></td>
+      <td><code>deque_type::iterator</code></td>
     </tr>
     <tr class="t-dsc">
-      <td>
-        <code>const_iterator</code>
-      </td>
-      <td>
-        <code>deque_type::const_iterator</code>
-      </td>
+      <td><code>const_iterator</code></td>
+      <td><code>deque_type::const_iterator</code></td>
     </tr>
     <tr class="t-dsc">
-      <td>
-        <code>reverse_iterator</code>
-      </td>
-      <td>
-        <code>deque_type::reverse_iterator</code>
-      </td>
+      <td><code>reverse_iterator</code></td>
+      <td><code>deque_type::reverse_iterator</code></td>
     </tr>
     <tr class="t-dsc">
-      <td>
-        <code>const_reverse_iterator</code>
-      </td>
-      <td>
-        <code>deque_type::const_reverse_iterator</code>
-      </td>
+      <td><code>const_reverse_iterator</code></td>
+      <td><code>deque_type::const_reverse_iterator</code></td>
     </tr>
   </tbody>
 </table>
-<p><br /></p>
 <h3>
-  <span class="mw-headline" id="Member functions"> Member functions </span>
+  <span class="mw-headline" id="Member_functions">Member functions</span>
 </h3>
 <table class="t-dsc-begin">
   <tbody>
     <tr class="t-dsc">
       <td>
-        <div class="t-dsc-member-nobold-div">
-          <a
-            href="constructor"
-            title="containerofunique/deque_of_unique/deque_of_unique"
-          >
-            <span>(constructor)</span>
-          </a>
+        <div class="t-dsc-member-div t-dsc-member-nobold-div">
+          <div>
+            <a
+              href="constructor"
+              title="containerofunique/deque_of_unique/deque_of_unique"
+              ><span class="t-lines"><span>(constructor)</span></span></a
+            >
+          </div>
         </div>
       </td>
       <td>
-        &nbsp;constructs the&nbsp;
-        <code>deque_of_unique</code>
-        <br />
+        constructs the <code>deque_of_unique</code> <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
     <tr class="t-dsc">
       <td>
-        <div class="t-dsc-member-nobold-div">
-          <a
-            href="destructor"
-            title="containerofunique/deque_of_unique/~deque_of_unique"
-          >
-            <span>(destructor)</span>
-          </a>
+        <div class="t-dsc-member-div t-dsc-member-nobold-div">
+          <div>
+            <a
+              href="destructor"
+              title="containerofunique/deque_of_unique/~deque_of_unique"
+              ><span class="t-lines"><span>(destructor)</span></span></a
+            >
+          </div>
         </div>
       </td>
       <td>
-        &nbsp;destructs the&nbsp;
-        <code>deque_of_unique</code>
-        <br />
+        destructs the <code>deque_of_unique</code> <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -451,15 +407,13 @@ title: deque_of_unique
             <a
               href="operator="
               title="containerofunique/deque_of_unique/operator="
+              ><span class="t-lines"><span>operator=</span></span></a
             >
-              <span>operator=</span>
-            </a>
           </div>
         </div>
       </td>
       <td>
-        &nbsp;assign values to the container&nbsp;
-        <br />
+        assigns values to the container <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -467,22 +421,21 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="assign" title="containerofunique/deque_of_unique/assign">
-              <span>assign</span>
-            </a>
+            <a href="assign" title="containerofunique/deque_of_unique/assign"
+              ><span class="t-lines"><span>assign</span></span></a
+            >
           </div>
         </div>
       </td>
       <td>
-        &nbsp;assign values to the container&nbsp;
-        <br />
+        assigns values to the container <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
     <tr>
       <td colspan="2">
         <h5>
-          <span class="mw-headline" id="Element access">Element Access</span>
+          <span class="mw-headline" id="Element_access">Element access</span>
         </h5>
       </td>
     </tr>
@@ -490,15 +443,14 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="at" title="containerofunique/deque_of_unique/">
-              <span>at</span>
-            </a>
+            <a href="at" title="containerofunique/deque_of_unique/at"
+              ><span class="t-lines"><span>at</span></span></a
+            >
           </div>
         </div>
       </td>
       <td>
-        &nbsp;access specified element with bounds checking&nbsp;
-        <br />
+        access specified element with bounds checking <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -509,15 +461,13 @@ title: deque_of_unique
             <a
               href="operator_at"
               title="containerofunique/deque_of_unique/operator_at"
+              ><span class="t-lines"><span>operator[]</span></span></a
             >
-              <span>operator[]</span>
-            </a>
           </div>
         </div>
       </td>
       <td>
-        &nbsp;access specified element&nbsp;
-        <br />
+        access specified element <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -525,15 +475,14 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="front" title="containerofunique/deque_of_unique/front">
-              <span>front</span>
-            </a>
+            <a href="front" title="containerofunique/deque_of_unique/front"
+              ><span class="t-lines"><span>front</span></span></a
+            >
           </div>
         </div>
       </td>
       <td>
-        &nbsp;access the first element&nbsp;
-        <br />
+        access the first element <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -541,15 +490,14 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="back" title="containerofunique/deque_of_unique/back">
-              <span>back</span>
-            </a>
+            <a href="back" title="containerofunique/deque_of_unique/back"
+              ><span class="t-lines"><span>back</span></span></a
+            >
           </div>
         </div>
       </td>
       <td>
-        &nbsp;access the last element&nbsp;
-        <br />
+        access the last element <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -564,15 +512,14 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="cbegin" title="containerofunique/deque_of_unique/cbegin">
-              <span>cbegin</span>
-            </a>
+            <a href="cbegin" title="containerofunique/deque_of_unique/cbegin"
+              ><span class="t-lines"><span>cbegin</span></span></a
+            >
           </div>
         </div>
       </td>
       <td>
-        &nbsp;return an iterator to the begining&nbsp;
-        <br />
+        returns a constant iterator to the beginning <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -580,15 +527,14 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="cend" title="containerofunique/deque_of_unique/cend">
-              <span>cend</span>
-            </a>
+            <a href="cend" title="containerofunique/deque_of_unique/cend"
+              ><span class="t-lines"><span>cend</span></span></a
+            >
           </div>
         </div>
       </td>
       <td>
-        &nbsp;return an iterator to the end&nbsp;
-        <br />
+        returns a constant iterator to the end <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -596,15 +542,14 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="crbegin" title="containerofunique/deque_of_unique/crbegin">
-              <span>crbegin</span>
-            </a>
+            <a href="crbegin" title="containerofunique/deque_of_unique/crbegin"
+              ><span class="t-lines"><span>crbegin</span></span></a
+            >
           </div>
         </div>
       </td>
       <td>
-        &nbsp;return a reverse iterator to the begining&nbsp;
-        <br />
+        returns a constant reverse iterator to the beginning <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -612,15 +557,14 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="crend" title="containerofunique/deque_of_unique/crend">
-              <span>crend</span>
-            </a>
+            <a href="crend" title="containerofunique/deque_of_unique/crend"
+              ><span class="t-lines"><span>crend</span></span></a
+            >
           </div>
         </div>
       </td>
       <td>
-        &nbsp;return a reverse iterator to the end&nbsp;
-        <br />
+        returns a constant reverse iterator to the end <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -635,15 +579,14 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="empty" title="containerofunique/deque_of_unique/empty">
-              <span>empty</span>
-            </a>
+            <a href="empty" title="containerofunique/deque_of_unique/empty"
+              ><span class="t-lines"><span>empty</span></span></a
+            >
           </div>
         </div>
       </td>
       <td>
-        &nbsp;checks whether the container is empty&nbsp;
-        <br />
+        checks whether the container is empty <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -651,15 +594,14 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="size" title="containerofunique/deque_of_unique/size">
-              <span>size</span>
-            </a>
+            <a href="size" title="containerofunique/deque_of_unique/size"
+              ><span class="t-lines"><span>size</span></span></a
+            >
           </div>
         </div>
       </td>
       <td>
-        &nbsp;returns the number of unique entries&nbsp;
-        <br />
+        returns the number of elements <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -674,15 +616,14 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="clear" title="containerofunique/deque_of_unique/clear">
-              <span>clear</span>
-            </a>
+            <a href="clear" title="containerofunique/deque_of_unique/clear"
+              ><span class="t-lines"><span>clear</span></span></a
+            >
           </div>
         </div>
       </td>
       <td>
-        &nbsp;clear the contents&nbsp;
-        <br />
+        clears the contents <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -690,15 +631,14 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="insert" title="containerofunique/deque_of_unique/insert">
-              <span>insert</span>
-            </a>
+            <a href="insert" title="containerofunique/deque_of_unique/insert"
+              ><span class="t-lines"><span>insert</span></span></a
+            >
           </div>
         </div>
       </td>
       <td>
-        &nbsp;inserts elements&nbsp;
-        <br />
+        inserts elements <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -706,15 +646,29 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="erase" title="containerofunique/deque_of_unique/erase">
-              <span>erase</span>
-            </a>
+            <a href="emplace" title="containerofunique/deque_of_unique/emplace"
+              ><span class="t-lines"><span>emplace</span></span></a
+            >
           </div>
         </div>
       </td>
       <td>
-        &nbsp;erases elements&nbsp;
-        <br />
+        constructs element in-place <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="erase" title="containerofunique/deque_of_unique/erase"
+              ><span class="t-lines"><span>erase</span></span></a
+            >
+          </div>
+        </div>
+      </td>
+      <td>
+        erases elements <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -725,31 +679,13 @@ title: deque_of_unique
             <a
               href="push_back"
               title="containerofunique/deque_of_unique/push_back"
+              ><span class="t-lines"><span>push_back</span></span></a
             >
-              <span>push_back</span>
-            </a>
           </div>
         </div>
       </td>
       <td>
-        &nbsp;adds an element to the end&nbsp;
-        <br />
-        <span class="t-mark">(public member function)</span>
-      </td>
-    </tr>
-    <tr class="t-dsc">
-      <td>
-        <div class="t-dsc-member-div">
-          <div>
-            <a href="emplace" title="containerofunique/deque_of_unique/emplace">
-              <span>emplace</span>
-            </a>
-          </div>
-        </div>
-      </td>
-      <td>
-        &nbsp;constructs element in-place&nbsp;
-        <br />
+        adds an element to the end <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -760,15 +696,13 @@ title: deque_of_unique
             <a
               href="emplace_back"
               title="containerofunique/deque_of_unique/emplace_back"
+              ><span class="t-lines"><span>emplace_back</span></span></a
             >
-              <span>emplace_back</span>
-            </a>
           </div>
         </div>
       </td>
       <td>
-        &nbsp;constructs element in-place at the end&nbsp;
-        <br />
+        constructs element in-place at the end <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -779,15 +713,13 @@ title: deque_of_unique
             <a
               href="pop_back"
               title="containerofunique/deque_of_unique/pop_back"
+              ><span class="t-lines"><span>pop_back</span></span></a
             >
-              <span>pop_back</span>
-            </a>
           </div>
         </div>
       </td>
       <td>
-        &nbsp;removes the last element to the end&nbsp;
-        <br />
+        removes the last element <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -798,15 +730,13 @@ title: deque_of_unique
             <a
               href="push_front"
               title="containerofunique/deque_of_unique/push_front"
+              ><span class="t-lines"><span>push_front</span></span></a
             >
-              <span>push_front</span>
-            </a>
           </div>
         </div>
       </td>
       <td>
-        &nbsp;inserts an element to the begining&nbsp;
-        <br />
+        inserts an element to the beginning <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -817,15 +747,13 @@ title: deque_of_unique
             <a
               href="emplace_front"
               title="containerofunique/deque_of_unique/emplace_front"
+              ><span class="t-lines"><span>emplace_front</span></span></a
             >
-              <span>emplace_front</span>
-            </a>
           </div>
         </div>
       </td>
       <td>
-        &nbsp;constructs element in-place at the begining&nbsp;
-        <br />
+        constructs element in-place at the beginning <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -836,15 +764,13 @@ title: deque_of_unique
             <a
               href="pop_front"
               title="containerofunique/deque_of_unique/pop_front"
+              ><span class="t-lines"><span>pop_front</span></span></a
             >
-              <span>pop_front</span>
-            </a>
           </div>
         </div>
       </td>
       <td>
-        &nbsp;removes the first element&nbsp;
-        <br />
+        removes the first element <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -852,22 +778,21 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="swap" title="containerofunique/deque_of_unique/swap">
-              <span>swap</span>
-            </a>
+            <a href="swap" title="containerofunique/deque_of_unique/swap"
+              ><span class="t-lines"><span>swap</span></span></a
+            >
           </div>
         </div>
       </td>
       <td>
-        &nbsp;removes the contents&nbsp;
-        <br />
+        swaps the contents <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
     <tr>
       <td colspan="2">
         <h5>
-          <span class="mw-headline" id="Look up">Look up</span>
+          <span class="mw-headline" id="Lookup">Lookup</span>
         </h5>
       </td>
     </tr>
@@ -875,15 +800,14 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="find" title="containerofunique/deque_of_unique/find">
-              <span>find</span>
-            </a>
+            <a href="find" title="containerofunique/deque_of_unique/find"
+              ><span class="t-lines"><span>find</span></span></a
+            >
           </div>
         </div>
       </td>
       <td>
-        &nbsp;finds element with specific key&nbsp;
-        <br />
+        finds element with specific key <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
@@ -894,9 +818,8 @@ title: deque_of_unique
             <a
               href="contains"
               title="containerofunique/deque_of_unique/contains"
+              ><span class="t-lines"><span>contains</span></span></a
             >
-              <span>contains</span>
-            </a>
           </div>
           <div>
             <span class="t-lines"
@@ -908,17 +831,14 @@ title: deque_of_unique
         </div>
       </td>
       <td>
-        &nbsp;checks if the container contains element with specific key&nbsp;
-        <br />
+        checks if the container contains element with specific key <br />
         <span class="t-mark">(public member function)</span>
       </td>
     </tr>
   </tbody>
 </table>
 <h3>
-  <span class="mw-headline" id="Non-member functions">
-    Non-member functions
-  </span>
+  <span class="mw-headline" id="Non-member_functions">Non-member functions</span>
 </h3>
 <table class="t-dsc-begin">
   <tbody>
@@ -929,8 +849,7 @@ title: deque_of_unique
             <a
               href="operator_cmp"
               title="containerofunique/deque_of_unique/operator_cmp"
-            >
-              <span class="t-lines"
+              ><span class="t-lines"
                 ><span>operator==</span><span>operator!=</span
                 ><span>operator&lt;</span><span>operator&lt;=</span
                 ><span>operator&gt;</span><span>operator&gt;=</span
@@ -969,7 +888,8 @@ title: deque_of_unique
         </div>
       </td>
       <td>
-        lexicographically compares the values of two <code>deque</code>s <br />
+        lexicographically compares the values of two
+        <code>deque_of_unique</code>s <br />
         <span class="t-mark">(function template)</span>
       </td>
     </tr>
@@ -977,8 +897,8 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="swap2" title="containerofunique/deque_of_unique/swap2">
-              <span class="t-lines"
+            <a href="swap2" title="containerofunique/deque_of_unique/swap2"
+              ><span class="t-lines"
                 ><span
                   >std::swap<span class="t-dsc-small"
                     >(containerofunique::deque_of_unique)</span
@@ -994,7 +914,7 @@ title: deque_of_unique
         <span class="t-lc"
           ><a
             href="https://en.cppreference.com/w/cpp/algorithm/swap"
-            title="cpp/algorithm/swap2"
+            title="cpp/algorithm/swap"
             >std::swap</a
           ></span
         >
@@ -1006,8 +926,8 @@ title: deque_of_unique
       <td>
         <div class="t-dsc-member-div">
           <div>
-            <a href="erase2" title="containerofunique/deque_of_unique/erase2">
-              <span class="t-lines"
+            <a href="erase2" title="containerofunique/deque_of_unique/erase2"
+              ><span class="t-lines"
                 ><span
                   >erase<span class="t-dsc-small"
                     >(containerofunique::deque_of_unique)</span
@@ -1036,38 +956,33 @@ title: deque_of_unique
     </tr>
   </tbody>
 </table>
-
-<h3><span class="mw-headline" id="Example">Example</span></h3>
+<h3>
+  <span class="mw-headline" id="Example">Example</span>
+</h3>
 <div class="t-example">
   <div dir="ltr" class="mw-geshi t-example-code" style="text-align: left">
     <div class="cpp source-cpp">
       <pre class="de1" style="border: none">
-<span class="co2">#include &lt;deque&gt;</span>
 <span class="co2">#include &lt;iostream&gt;</span>
 <span class="co2">#include "deque_of_unique.h"</span>
 &nbsp;
 <span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
 <span class="br0">{</span>
     <span class="co1">// Create a deque_of_unique containing integers</span>
-    containerofunique<span class="sy4">::</span><span class="me2">deque_of_unique</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> und <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">3</span>, <span class="nu0">5</span>, <span class="nu0">20</span>, <span class="nu0">9</span><span class="br0">}</span><span class="sy4">;</span>
+    containerofunique<span class="sy4">::</span><span class="me2">deque_of_unique</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> d <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">3</span>, <span class="nu0">5</span>, <span class="nu0">20</span>, <span class="nu0">9</span><span class="br0">}</span><span class="sy4">;</span>
     &nbsp;
-    <span class="co1">// Add an integer to the beginning and end of the deque_of_unique</span>
-    und.<span class="me1">push_front</span><span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span>
-    und.<span class="me1">push_back</span><span class="br0">(</span><span class="nu0">28</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// Duplicate is silently ignored</span>
+    d.<span class="me1">push_front</span><span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span>
+    d.<span class="me1">push_back</span><span class="br0">(</span><span class="nu0">28</span><span class="br0">)</span><span class="sy4">;</span>
     &nbsp;
-    <span class="co1">// print values of deque_of_unique</span>
-    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> n <span class="sy4">:</span> und.<span class="me1">deque</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
-    <span class="kw1773">std::<span class="me2">cout</span></span>
-    <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
-    <span class="kw1773">std::<span class="me2">cout</span></span>
-    <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-<span class="br0">}</span>
-                        </pre>
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> n <span class="sy4">:</span> d<span class="br0">)</span>
+        <span class="kw1773">std::<span class="me2">cout</span></span> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
+    <span class="kw1773">std::<span class="me2">cout</span></span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span></pre>
     </div>
   </div>
-  <p>output</p>
+  <p>Output:</p>
   <div class="mw-geshi" style="text-align: left">
     <div class="text source-text"><pre class="de1">3 5 20 9 28</pre></div>
   </div>
 </div>
-<p><br /></p>

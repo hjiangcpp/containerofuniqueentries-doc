@@ -1,12 +1,12 @@
 ---
-last_modified_at: "2025-01-05 13:14:38 +0800"
+last_modified_at: "2026-03-20 00:00:00 +0800"
 layout: deque_of_unique_method
 title: assign
 ---
 
 <table class="t-dcl-begin">
   <tbody>
-    <tr class="t-dcl t-since-cxx98">
+    <tr class="t-dcl">
       <td>
         <div>
           <span class="mw-geshi cpp source-cpp"
@@ -22,7 +22,7 @@ title: assign
       <td>(1)</td>
       <td class="t-dcl-nopad"></td>
     </tr>
-    <tr class="t-dcl t-since-cxx11">
+    <tr class="t-dcl">
       <td>
         <div>
           <span class="mw-geshi cpp source-cpp"
@@ -37,7 +37,7 @@ title: assign
         </div>
       </td>
       <td>(2)</td>
-      <td></td>
+      <td class="t-dcl-nopad"></td>
     </tr>
     <tr class="t-dcl-sep">
       <td></td>
@@ -46,7 +46,7 @@ title: assign
     </tr>
   </tbody>
 </table>
-<p>Replaces the contents of the container.</p>
+<p>Replaces the contents of the container. Only unique elements are stored.</p>
 <div class="t-li1">
   <span class="t-li">1)</span> Replaces the contents with copies of those in the
   range
@@ -56,8 +56,7 @@ title: assign
     ><code>,&nbsp;</code
     ><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span
     ><code>)</code></span
-  >. Only unique elements are inserted, ensuring no duplicates are stored in the
-  container.
+  >. Duplicate elements are ignored.
 </div>
 <div class="t-li1">
   <span class="t-li"></span> If either argument is an iterator into
@@ -74,7 +73,7 @@ title: assign
             This overload participates in overload resolution only if
             <code>InputIt</code> satisfies
             <a
-              href="/w/cpp/named_req/InputIterator"
+              href="https://en.cppreference.com/w/cpp/named_req/InputIterator"
               title="cpp/named req/InputIterator"
               ><span
                 style="
@@ -94,8 +93,7 @@ title: assign
 <div class="t-li1">
   <span class="t-li">2)</span> Replaces the contents with the elements from
   <span class="t-c"><span class="mw-geshi cpp source-cpp">ilist</span></span
-  >. Only unique elements are inserted, ensuring no duplicates are stored in the
-  container.
+  >. Duplicate elements are ignored.
 </div>
 <p>
   All iterators (including the
@@ -111,16 +109,6 @@ title: assign
 </h3>
 <table class="t-par-begin">
   <tbody>
-    <tr class="t-par">
-      <td>count</td>
-      <td>-</td>
-      <td>the new size of the container</td>
-    </tr>
-    <tr class="t-par">
-      <td>value</td>
-      <td>-</td>
-      <td>the value to initialize elements of the container with</td>
-    </tr>
     <tr class="t-par">
       <td>first, last</td>
       <td>-</td>
@@ -140,8 +128,34 @@ title: assign
         to copy the values from
       </td>
     </tr>
+    <tr class="t-par-hitem">
+      <td colspan="3">Type requirements</td>
+    </tr>
+    <tr class="t-par-req">
+      <td colspan="3">
+        -
+        <div class="spacer"></div>
+        <code>T</code> must meet the requirements of
+        <a
+          href="https://en.cppreference.com/w/cpp/named_req/CopyInsertable"
+          title="cpp/named req/CopyInsertable"
+          ><span
+            style="
+              font-family: Georgia, 'DejaVu Serif', serif;
+              font-style: italic;
+            "
+            >CopyInsertable</span
+          ></a
+        >
+        in order to use overloads (1, 2).
+      </td>
+    </tr>
   </tbody>
 </table>
+<h3>
+  <span class="mw-headline" id="Return_value">Return value</span>
+</h3>
+<p>(none)</p>
 <h3>
   <span class="mw-headline" id="Complexity">Complexity</span>
 </h3>
@@ -152,20 +166,9 @@ title: assign
       <td>
         <div>
           <span class="t-li4"
-            >Average case: linear (i.e.
-            <span class="texhtml" style="white-space: nowrap">O(N + M)</span>,
-            where <span class="texhtml" style="white-space: nowrap">N</span> is
-            <span class="t-c"
-              ><span class="mw-geshi cpp source-cpp"
-                ><a href="http://en.cppreference.com/w/cpp/iterator/distance"
-                  ><span class="kw678"
-                    >std::<span class="me2">distance</span></span
-                  ></a
-                ><span class="br0">(</span>first, last<span class="br0"
-                  >)</span
-                ></span
-              ></span
-            >, where
+            >Average case:
+            <span class="texhtml" style="white-space: nowrap">O(M + N)</span>,
+            where
             <span class="texhtml" style="white-space: nowrap">N</span> is
             <span class="t-c"
               ><span class="mw-geshi cpp source-cpp"
@@ -178,12 +181,13 @@ title: assign
                 ></span
               ></span
             >
-            and <span class="texhtml" style="white-space: nowrap">M</span> is
-            the elements in the original deque_of_unique. <br />Worst case:
-            quadratic, i.e.
+            and
+            <span class="texhtml" style="white-space: nowrap">M</span> is the
+            number of elements in the original container.<br />
+            Worst case:
             <span class="texhtml" style="white-space: nowrap"
-              >O(N<sup>2</sup>).</span
-            ></span
+              >O(M + N<sup>2</sup>)</span
+            >.</span
           >
         </div>
       </td>
@@ -192,28 +196,28 @@ title: assign
       <td style="text-align: right">2)</td>
       <td>
         <div>
-          <span class="t-li4">
-            Average case
-            <span class="texhtml" style="white-space: nowrap">O(N)</span> (<span
-              class="texhtml"
-              style="white-space: nowrap"
-              >N</span
-            >
-            is
+          <span class="t-li4"
+            >Average case:
+            <span class="texhtml" style="white-space: nowrap">O(M + N)</span>,
+            where
+            <span class="texhtml" style="white-space: nowrap">N</span> is
             <span class="t-c"
               ><span class="mw-geshi cpp source-cpp"
                 ><a href="http://en.cppreference.com/w/cpp/iterator/size"
                   ><span class="kw689"
                     >std::<span class="me2">size</span></span
                   ></a
-                ><span class="br0">(</span>init<span class="br0">)</span></span
+                ><span class="br0">(</span>ilist<span class="br0">)</span></span
               ></span
-            >).<br />
+            >
+            and
+            <span class="texhtml" style="white-space: nowrap">M</span> is the
+            number of elements in the original container.<br />
             Worst case:
             <span class="texhtml" style="white-space: nowrap"
-              >O(N<sup>2</sup>)</span
-            >.
-          </span>
+              >O(M + N<sup>2</sup>)</span
+            >.</span
+          >
         </div>
       </td>
     </tr>
@@ -224,3 +228,10 @@ title: assign
     </tr>
   </tbody>
 </table>
+<h3>
+  <span class="mw-headline" id="Exceptions">Exceptions</span>
+</h3>
+<p>
+  If an exception is thrown, the container is left in a valid but unspecified
+  state.
+</p>

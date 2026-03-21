@@ -1,34 +1,11 @@
 ---
-last_modified_at: "2025-01-05 15:39:11 +0800"
+last_modified_at: "2026-03-20 00:00:00 +0800"
 layout: deque_of_unique_method
 title: emplace
 ---
 
 <table class="t-dcl-begin">
   <tbody>
-    <tr class="t-dcl t-since-cxx11">
-      <td>
-        <div>
-          <span class="mw-geshi cpp source-cpp"
-            ><span class="kw1">template</span><span class="sy1">&lt;</span>
-            <span class="kw1">class</span>... <span class="me1">Args</span>
-            <span class="sy1">&gt;</span><br />
-            <span class="mw-geshi cpp source-cpp"
-              ><span class="kw4">void</span> emplace<span class="br0">(</span>
-              const_iterator pos, Args<span class="sy3">&amp;&amp;</span>...
-              <span class="me1">args</span> <span class="br0">)</span
-              ><span class="sy4">;</span></span
-            ></span
-          >
-        </div>
-      </td>
-      <td>(1)</td>
-      <td>
-        <span class="t-mark-rev t-since-cxx11 t-until-cxx17"
-          >(until C++17)</span
-        >
-      </td>
-    </tr>
     <tr class="t-dcl t-since-cxx11">
       <td>
         <div>
@@ -51,8 +28,8 @@ title: emplace
           >
         </div>
       </td>
-      <td>(2)</td>
-      <td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td>
+      <td>(1)</td>
+      <td class="t-dcl-nopad"></td>
     </tr>
     <tr class="t-dcl-sep">
       <td></td>
@@ -64,7 +41,7 @@ title: emplace
 <p>
   Inserts a new element into the container directly before
   <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span
-  >.
+  >, if an element with the same value does not already exist in the container.
 </p>
 <p>
   The element is constructed through
@@ -91,33 +68,31 @@ title: emplace
       ><span class="br0">(</span>args<span class="br0">)</span>...</span
     ></span
   >.
-  <span class="t-c"><span class="mw-geshi cpp source-cpp">args...</span></span>
-  may directly or indirectly refer to a value in the container.
 </p>
 <p>
   All iterators (including the
   <a
-    href="https://en.cppreference.com/w/cpp/container/deque/end"
-    title="cpp/container/deque/end"
+    href="{{ '/_docs/deque_of_unique/cend' | relative_url }}"
+    title="containerofunique/deque_of_unique/cend"
     ><code>cend()</code></a
   >
   iterator) are invalidated. References are invalidated too, unless
   <span class="t-c"
     ><span class="mw-geshi cpp source-cpp">pos <span class="sy1">==</span></span
-    ><code>&nbsp;</code
+    ><code>&#160;</code
     ><a
-      href="https://en.cppreference.com/w/cpp/container/deque/begin"
-      title="cpp/container/deque/begin"
+      href="{{ '/_docs/deque_of_unique/cbegin' | relative_url }}"
+      title="containerofunique/deque_of_unique/cbegin"
       ><code>cbegin()</code></a
     ></span
   >
   or
   <span class="t-c"
     ><span class="mw-geshi cpp source-cpp">pos <span class="sy1">==</span></span
-    ><code>&nbsp;</code
+    ><code>&#160;</code
     ><a
-      href="https://en.cppreference.com/w/cpp/container/deque/end"
-      title="cpp/container/deque/end"
+      href="{{ '/_docs/deque_of_unique/cend' | relative_url }}"
+      title="containerofunique/deque_of_unique/cend"
       ><code>cend()</code></a
     ></span
   >, in which case they are not invalidated.
@@ -183,43 +158,33 @@ title: emplace
   </tbody>
 </table>
 <h3><span class="mw-headline" id="Return_value">Return value</span></h3>
-<div class="t-li1"><span class="t-li">1)</span>None.</div>
-<div class="t-li1">
-  <span class="t-li">2)</span>The function returns a
-  <span class="mw-geshi cpp source-cpp"
-    ><span class="t-lc">std::pair</span
-    ><span class="sy1">&lt;</span>const_iterator, bool<span class="sy1"
-      >&gt;</span
-    ></span
-  >:
-  <br />
-  - first: an optional reference wrapper to the inserted element if the
-  insertion is successful; otherwise,
-  <span class="t-c mw-geshi cpp source-cpp">std::nullopt</span> if the element
-  already exists in the set.
-  <br />
-  - second:
+<p>
+  A pair consisting of an iterator to the inserted element (or
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span> if
+  the element was not inserted) and a
+  <span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span>
+  value set to
   <span class="t-c"
     ><span class="mw-geshi cpp source-cpp"
       ><span class="kw2">true</span></span
     ></span
   >
-  if the insertion is successful; otherwise,
+  if the insertion took place, or
   <span class="t-c"
     ><span class="mw-geshi cpp source-cpp"
       ><span class="kw2">false</span></span
     ></span
   >
-  if the element already exists in the set.
-</div>
+  if the element already existed in the container.
+</p>
 
 <h3>
   <span class="mw-headline" id="Complexity">Complexity</span>
 </h3>
 <p>
-  Average case: Amortized linear in the lesser of the distances between
-  <span class="t-c"><span class="mw-geshi cpp source-cpp">pos </span></span> and
-  either of the ends of the container assuming no duplicates. If the element is
+  Average case: amortized linear in the lesser of the distances between
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span> and
+  either of the ends of the container, assuming no duplicates. If the element is
   a duplicate, the complexity is
   <span class="texhtml" style="white-space: nowrap">O(1)</span> since no
   insertion occurs.<br />
@@ -227,9 +192,20 @@ title: emplace
 </p>
 <h3>Exceptions</h3>
 <p>
-  If an exception is thrown for any reason, this function has no effect (<a
-    href="https://en.cppreference.com/w/cpp/language/exceptions#Exception_safety"
-    title="cpp/language/exceptions"
-    >strong exception safety guarantee</a
-  >).
+  If an exception is thrown by insertion into the unordered set, the insertion
+  has no effect. If an exception is thrown when inserting a single element at
+  either end of the deque, this function has no effect (strong exception
+  guarantee). Otherwise, if an exception is thrown by the move constructor of a
+  non-<a
+    href="https://en.cppreference.com/w/cpp/named_req/CopyInsertable"
+    title="cpp/named req/CopyInsertable"
+    ><span
+      style="
+        font-family: Georgia, 'DejaVu Serif', serif;
+        font-style: italic;
+      "
+      >CopyInsertable</span
+    ></a
+  >
+  <code>T</code>, the effects are unspecified.
 </p>

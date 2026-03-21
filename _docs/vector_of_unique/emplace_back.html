@@ -1,5 +1,5 @@
 ---
-last_modified_at: "2025-04-24 15:54:35 +0800"
+last_modified_at: "2026-03-20 00:00:00 +0800"
 layout: vector_of_unique_method
 title: emplace_back
 ---
@@ -85,21 +85,21 @@ title: emplace_back
 <p>
   If after the operation the new
   <a
-    href="{{ '/_docs/vector_of_unique/size.html' | relative_url }}"
+    href="{{ '/_docs/vector_of_unique/size' | relative_url }}"
     title="vector_of_unique/size"
     ><code>size()</code></a
   >
   is greater than old capacity, a reallocation takes place, in which case all
   iterators (including the
   <a
-    href="{{ '/_docs/vector_of_unique/cend.html' | relative_url }}"
+    href="{{ '/_docs/vector_of_unique/cend' | relative_url }}"
     title="vector_of_unique/cend"
     ><code>cend()</code></a
   >
   iterator) and all references to the elements are invalidated. Otherwise only
   the
   <a
-    href="{{ '/_docs/vector_of_unique/cend.html' | relative_url }}"
+    href="{{ '/_docs/vector_of_unique/cend' | relative_url }}"
     title="vector_of_unique/cend"
     ><code>cend()</code></a
   >
@@ -140,12 +140,12 @@ title: emplace_back
   </tbody>
 </table>
 <h3><span class="mw-headline" id="Return_value">Return value</span></h3>
-<div class="t-li1"><span class="t-li">1)</span>None.</div>
+<div class="t-li1"><span class="t-li">1)</span> None.</div>
 <div class="t-li1">
-  <span class="t-li">1)</span>None. An optional reference wrapper to the
-  inserted element if the insertion is successful; otherwise,
+  <span class="t-li">2)</span> An optional reference wrapper to the inserted
+  element if the insertion is successful; otherwise,
   <span class="t-c mw-geshi cpp source-cpp">std::nullopt</span> if the element
-  already exists in the set.
+  already exists in the container.
 </div>
 <h3>
   <span class="mw-headline" id="Complexity">Complexity</span>
