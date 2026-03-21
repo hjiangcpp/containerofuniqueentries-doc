@@ -1,0 +1,226 @@
+---
+last_modified_at: "2025-01-04 13:13:57 +0800"
+layout: deque_of_unique_method
+title: erase
+---
+
+<table class="t-dcl-begin">
+  <tbody></tbody>
+  <tbody class="t-dcl-rev t-dcl-rev-num">
+    <tr class="t-dcl-rev-aux">
+      <td></td>
+      <td rowspan="142">(1)</td>
+      <td></td>
+    </tr>
+    <tr class="t-dcl-rev-aux" style="display: none">
+      <td></td>
+      <td rowspan="142">(1)</td>
+      <td></td>
+    </tr>
+    <tr class="t-dcl t-until-cxx11">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            >const_iterator erase<span class="br0">(</span> const_iterator pos
+            <span class="br0">)</span><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td class="t-dcl-nopad"></td>
+      <td></td>
+    </tr>
+  </tbody>
+  <tbody class="t-dcl-rev t-dcl-rev-num">
+    <tr class="t-dcl-rev-aux">
+      <td></td>
+      <td rowspan="142">(2)</td>
+      <td></td>
+    </tr>
+    <tr class="t-dcl-rev-aux" style="display: none">
+      <td></td>
+      <td rowspan="142">(2)</td>
+      <td></td>
+    </tr>
+    <tr class="t-dcl t-until-cxx11">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            >const_iterator erase<span class="br0">(</span> const_iterator
+            first, const_iterator last <span class="br0">)</span
+            ><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td class="t-dcl-nopad"></td>
+      <td></td>
+    </tr>
+    <tr class="t-dcl t-until-cxx11" style="display: none">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            >const_iterator erase<span class="br0">(</span> const_iterator
+            first, const_iterator last <span class="br0">)</span
+            ><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td class="t-dcl-nopad"></td>
+      <td></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Erases the specified elements from the container.</p>
+<div class="t-li1">
+  <span class="t-li">1)</span> Removes the element at
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span
+  >.
+</div>
+<div class="t-li1">
+  <span class="t-li">2)</span> Removes the elements in the range
+  <span style="display: inline-block"
+    ><code>[</code
+    ><span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span
+    ><code>,&nbsp;</code
+    ><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span
+    ><code>)</code></span
+  >.
+</div>
+<p>
+  All iterators and references are invalidated, unless the erased elements are
+  at the end or at the beginning of the container, in which case only the
+  iterators and references to the erased elements are invalidated. The
+  <a
+    href="{{ '/_docs/deque_of_unique/cend' | relative_url }}"
+    title="containerofunique/deque_of_unique/cend"
+    ><code>cend()</code></a
+  >
+  iterator is also invalidated unless the erased elements are at the beginning
+  of the container and the last element is not erased.
+</p>
+<p>
+  The iterator
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span> must
+  be valid and dereferenceable. Thus the
+  <span class="t-lc"
+    ><a
+      href="{{ '/_docs/deque_of_unique/cend' | relative_url }}"
+      title="containerofunique/deque_of_unique/cend"
+      ><code>cend()</code></a
+    ></span
+  >
+  iterator (which is valid, but is not dereferenceable) cannot be used as a
+  value for
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span
+  >.
+</p>
+<p>
+  The iterator
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span>
+  does not need to be dereferenceable if
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      >first <span class="sy1">==</span> last</span
+    ></span
+  >: erasing an empty range is a no-op.
+</p>
+<h3>
+  <span class="mw-headline" id="Parameters">Parameters</span>
+</h3>
+<table class="t-par-begin">
+  <tbody>
+    <tr class="t-par">
+      <td>pos</td>
+      <td>-</td>
+      <td>iterator to the element to remove</td>
+    </tr>
+    <tr class="t-par">
+      <td>first, last</td>
+      <td>-</td>
+      <td>range of elements to remove</td>
+    </tr>
+    <tr class="t-par-hitem">
+      <td colspan="3">Type requirements</td>
+    </tr>
+    <tr class="t-par-req">
+      <td colspan="3">
+        -
+        <div class="spacer"></div>
+        <code>T</code> must meet the requirements of
+        <a
+          href="https://en.cppreference.com//w/cpp/named_req/MoveAssignable"
+          title="cpp/named req/MoveAssignable"
+          ><span
+            style="
+              font-family: Georgia, 'DejaVu Serif', serif;
+              font-style: italic;
+            "
+            >MoveAssignable</span
+          ></a
+        >.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3><span class="mw-headline" id="Return_value">Return value</span></h3>
+<p>Iterator following the last removed element.</p>
+<div class="t-li1">
+  <span class="t-li">1)</span> If
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span>
+  refers to the last element, then the
+  <span class="t-lc"
+    ><a
+      href="{{ '/_docs/deque_of_unique/cend' | relative_url }}"
+      title="containerofunique/deque_of_unique/cend"
+      ><code>cend()</code></a
+    ></span
+  >
+  iterator is returned.
+</div>
+<div class="t-li1">
+  <span class="t-li">2)</span> If
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      >last <span class="sy1">==</span> end<span class="br0">(</span
+      ><span class="br0">)</span></span
+    ></span
+  >
+  prior to removal, then the updated
+  <span class="t-lc"
+    ><a
+      href="{{ '/_docs/deque_of_unique/cend' | relative_url }}"
+      title="containerofunique/deque_of_unique/cend"
+      ><code>cend()</code></a
+    ></span
+  >
+  iterator is returned.
+</div>
+<div class="t-li1">
+  <span class="t-li"></span> If
+  <span style="display: inline-block"
+    ><code>[</code
+    ><span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span
+    ><code>,&nbsp;</code
+    ><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span
+    ><code>)</code></span
+  >
+  is an empty range, then
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span> is
+  returned.
+</div>
+<h3>Complexity</h3>
+<p>
+  <span class="texhtml" style="white-space: nowrap">O(N)</span> due to the need
+  to shift elements in the deque. N is the size of deque_of_unique.
+</p>
+<h3>Exceptions</h3>
+<p>
+  Does not throw unless an exception is thrown by the assignment operator of T.
+</p>

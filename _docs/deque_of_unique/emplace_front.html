@@ -1,0 +1,127 @@
+---
+last_modified_at: "2025-01-04 13:13:57 +0800"
+layout: deque_of_unique_method
+title: emplace_front
+---
+
+<table class="t-dcl-begin">
+  <tbody></tbody>
+  <tbody class="t-dcl-rev">
+    <tr class="t-dcl t-since-cxx11 t-until-cxx17">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            ><span class="kw1">template</span><span class="sy1">&lt;</span>
+            <span class="kw1">class</span>... <span class="me1">Args</span>
+            <span class="sy1">&gt;</span><br />
+            <span class="t-lc">std::optional</span><span class="sy1">&lt;</span
+            ><span class="t-lc"
+              >std::reference_wrapper<span class="sy1">&lt;</span>T</span
+            ><span class="sy1">&gt;</span
+            ><span class="sy1">&gt;</span> emplace_front<span class="br0"
+              >(</span
+            >
+            Args<span class="sy3">&amp;&amp;</span>...
+            <span class="me1">args</span> <span class="br0">)</span
+            ><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td class="t-dcl-nopad"></td>
+      <td><br /></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  Inserts a new element to the beginning of the container. The element is
+  constructed through
+  <span class="t-lc"
+    ><a
+      href="https://en.cppreference.com/w/cpp/memory/allocator_traits/construct"
+      title="cpp/memory/allocator traits/construct"
+      >std::allocator_traits::construct</a
+    ></span
+  >, which typically uses placement-new to construct the element in-place at the
+  location provided by the container. The arguments
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">args...</span></span>
+  are forwarded to the constructor as
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      ><a href="http://en.cppreference.com/w/cpp/utility/forward"
+        ><span class="kw1125">std::<span class="me2">forward</span></span></a
+      ><span class="sy1">&lt;</span>Args<span class="sy1">&gt;</span
+      ><span class="br0">(</span>args<span class="br0">)</span>...</span
+    ></span
+  >.
+</p>
+<p>
+  All iterators (including the
+  <a
+    href="{{ '/_docs/deque_of_unique/cend.html' | relative_url }}"
+    title="containerofunique/deque_of_unique/cend"
+    ><code>cend()</code></a
+  >
+  iterator) are invalidated. No references are invalidated.
+</p>
+<h3>
+  <span class="mw-headline" id="Parameters">Parameters</span>
+</h3>
+<table class="t-par-begin">
+  <tbody>
+    <tr class="t-par">
+      <td>args</td>
+      <td>-</td>
+      <td>arguments to forward to the constructor of the element</td>
+    </tr>
+    <tr class="t-par-hitem">
+      <td colspan="3">Type requirements</td>
+    </tr>
+    <tr class="t-par-req">
+      <td colspan="3">
+        -
+        <div class="spacer"></div>
+        <code>T (the container's element type)</code> must meet the requirements
+        of
+        <a
+          href="https://en.cppreference.com/w/cpp/named_req/EmplaceConstructible"
+          title="cpp/named req/EmplaceConstructible"
+          ><span
+            style="
+              font-family: Georgia, 'DejaVu Serif', serif;
+              font-style: italic;
+            "
+            >EmplaceConstructible</span
+          ></a
+        >.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3><span class="mw-headline" id="Return_value">Return value</span></h3>
+<p>
+  An optional reference wrapper to the inserted element if the insertion is
+  successful; otherwise, std::nullopt if the element already exists in the set.
+</p>
+<h3>
+  <span class="mw-headline" id="Complexity">Complexity</span>
+</h3>
+<p>
+  Amortized constant on average no matter if the insertion is successful, worst
+  case linear in the size of the container.
+</p>
+
+<h3>Exceptions</h3>
+<p>
+  If an exception is thrown for any reason, this function has no effect (<a
+    href="https://en.cppreference.com/w/cpp/language/exceptions#Exception_safety"
+    title="cpp/language/exceptions"
+    >strong exception safety guarantee</a
+  >).
+</p>

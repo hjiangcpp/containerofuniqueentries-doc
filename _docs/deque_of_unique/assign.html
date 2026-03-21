@@ -1,0 +1,226 @@
+---
+last_modified_at: "2025-01-05 13:14:38 +0800"
+layout: deque_of_unique_method
+title: assign
+---
+
+<table class="t-dcl-begin">
+  <tbody>
+    <tr class="t-dcl t-since-cxx98">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            ><span class="kw1">template</span><span class="sy1">&lt;</span>
+            <span class="kw1">class</span> InputIt <span class="sy1">&gt;</span
+            ><br />
+            <span class="kw4">void</span> assign<span class="br0">(</span>
+            InputIt first, InputIt last <span class="br0">)</span
+            ><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(1)</td>
+      <td class="t-dcl-nopad"></td>
+    </tr>
+    <tr class="t-dcl t-since-cxx11">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            ><span class="kw4">void</span> assign<span class="br0">(</span>
+            <a href="http://en.cppreference.com/w/cpp/utility/initializer_list"
+              ><span class="kw964"
+                >std::<span class="me2">initializer_list</span></span
+              ></a
+            ><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> ilist
+            <span class="br0">)</span><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(2)</td>
+      <td></td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p>Replaces the contents of the container.</p>
+<div class="t-li1">
+  <span class="t-li">1)</span> Replaces the contents with copies of those in the
+  range
+  <span style="display: inline-block"
+    ><code>[</code
+    ><span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span
+    ><code>,&nbsp;</code
+    ><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span
+    ><code>)</code></span
+  >. Only unique elements are inserted, ensuring no duplicates are stored in the
+  container.
+</div>
+<div class="t-li1">
+  <span class="t-li"></span> If either argument is an iterator into
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      ><span class="sy2">*</span>this</span
+    ></span
+  >, the behavior is undefined.
+  <table class="t-rev-begin">
+    <tbody>
+      <tr class="t-rev t-since-cxx11">
+        <td>
+          <p>
+            This overload participates in overload resolution only if
+            <code>InputIt</code> satisfies
+            <a
+              href="/w/cpp/named_req/InputIterator"
+              title="cpp/named req/InputIterator"
+              ><span
+                style="
+                  font-family: Georgia, 'DejaVu Serif', serif;
+                  font-style: italic;
+                "
+                >LegacyInputIterator</span
+              ></a
+            >.
+          </p>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="t-li1">
+  <span class="t-li">2)</span> Replaces the contents with the elements from
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">ilist</span></span
+  >. Only unique elements are inserted, ensuring no duplicates are stored in the
+  container.
+</div>
+<p>
+  All iterators (including the
+  <a
+    href="{{ '/_docs/deque_of_unique/cend' | relative_url }}"
+    title="containerofunique/deque_of_unique/cend"
+    ><code>cend()</code></a
+  >
+  iterator) and all references to the elements are invalidated.
+</p>
+<h3>
+  <span class="mw-headline" id="Parameters">Parameters</span>
+</h3>
+<table class="t-par-begin">
+  <tbody>
+    <tr class="t-par">
+      <td>count</td>
+      <td>-</td>
+      <td>the new size of the container</td>
+    </tr>
+    <tr class="t-par">
+      <td>value</td>
+      <td>-</td>
+      <td>the value to initialize elements of the container with</td>
+    </tr>
+    <tr class="t-par">
+      <td>first, last</td>
+      <td>-</td>
+      <td>the range to copy the elements from</td>
+    </tr>
+    <tr class="t-par">
+      <td>ilist</td>
+      <td>-</td>
+      <td>
+        <span class="t-lc"
+          ><a
+            href="https://en.cppreference.com/w/cpp/utility/initializer_list"
+            title="cpp/utility/initializer list"
+            >std::initializer_list</a
+          ></span
+        >
+        to copy the values from
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3>
+  <span class="mw-headline" id="Complexity">Complexity</span>
+</h3>
+<table class="t-dsc-begin">
+  <tbody>
+    <tr class="t-dsc">
+      <td style="text-align: right">1)</td>
+      <td>
+        <div>
+          <span class="t-li4"
+            >Average case: linear (i.e.
+            <span class="texhtml" style="white-space: nowrap">O(N + M)</span>,
+            where <span class="texhtml" style="white-space: nowrap">N</span> is
+            <span class="t-c"
+              ><span class="mw-geshi cpp source-cpp"
+                ><a href="http://en.cppreference.com/w/cpp/iterator/distance"
+                  ><span class="kw678"
+                    >std::<span class="me2">distance</span></span
+                  ></a
+                ><span class="br0">(</span>first, last<span class="br0"
+                  >)</span
+                ></span
+              ></span
+            >, where
+            <span class="texhtml" style="white-space: nowrap">N</span> is
+            <span class="t-c"
+              ><span class="mw-geshi cpp source-cpp"
+                ><a href="http://en.cppreference.com/w/cpp/iterator/distance"
+                  ><span class="kw678"
+                    >std::<span class="me2">distance</span></span
+                  ></a
+                ><span class="br0">(</span>first, last<span class="br0"
+                  >)</span
+                ></span
+              ></span
+            >
+            and <span class="texhtml" style="white-space: nowrap">M</span> is
+            the elements in the original deque_of_unique. <br />Worst case:
+            quadratic, i.e.
+            <span class="texhtml" style="white-space: nowrap"
+              >O(N<sup>2</sup>).</span
+            ></span
+          >
+        </div>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td style="text-align: right">2)</td>
+      <td>
+        <div>
+          <span class="t-li4">
+            Average case
+            <span class="texhtml" style="white-space: nowrap">O(N)</span> (<span
+              class="texhtml"
+              style="white-space: nowrap"
+              >N</span
+            >
+            is
+            <span class="t-c"
+              ><span class="mw-geshi cpp source-cpp"
+                ><a href="http://en.cppreference.com/w/cpp/iterator/size"
+                  ><span class="kw689"
+                    >std::<span class="me2">size</span></span
+                  ></a
+                ><span class="br0">(</span>init<span class="br0">)</span></span
+              ></span
+            >).<br />
+            Worst case:
+            <span class="texhtml" style="white-space: nowrap"
+              >O(N<sup>2</sup>)</span
+            >.
+          </span>
+        </div>
+      </td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>

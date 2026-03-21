@@ -1,0 +1,38 @@
+<div id="cpp-footer-base">
+  <div id="footer">
+    <div id="cpp-navigation">
+      <h5>Navigation</h5>
+      <ul>
+        <li id="n-Support-us">
+          <a href="paypal_QR_code.jpg" rel="nofollow">Support us</a>
+        </li>
+        <li id="n-recentchanges">
+          <a
+            href="{{ '/recent_changes' | relative_url }}"
+            title="A list of recent changes in the library"
+            accesskey="r"
+            >Recent changes</a
+          >
+        </li>
+        <li id="n-FAQ">
+          <a href="{{ '/FAQ' | relative_url }}">FAQ</a>
+        </li>
+      </ul>
+    </div>
+    <ul id="footer-info">
+      <li id="footer-info-lastmod">
+        This page was last modified on {% if page.last_modified_at %} {{
+        page.last_modified_at | date: "%d %B %Y, at %H:%M" }} {% else %} {{
+        site.time | date: "%d %B %Y, at %H:%M" }} {% endif %}.
+      </li>
+    </ul>
+    <p>&copy; 2024 Container of Unique Entries. All rights reserved.</p>
+    <p>
+      <a href="{{ '/privacy-policy' | relative_url }}">Privacy Policy</a>
+      |
+      <a href="{{ '/FAQ' | relative_url }}">About containerofunique</a>
+      |
+      <a href="{{ '/disclaimers' | relative_url }}">Disclaimers</a>
+    </p>
+  </div>
+</div>

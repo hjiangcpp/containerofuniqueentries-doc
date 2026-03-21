@@ -1,0 +1,1073 @@
+---
+last_modified_at: "2025-01-04 13:19:27 +0800"
+layout: deque_of_unique_main
+title: deque_of_unique
+---
+
+<table class="t-dcl-begin">
+  <tbody>
+    <tr class="t-dsc-header">
+      <td>
+        <div>
+          Defined in header
+          <code
+            ><a
+              href="{{ '/_docs/deque_of_unique/index.html' | relative_url }}"
+              title="containerofunique/deque_of_unique"
+              >&lt;deque_of_unique&gt;</a
+            ></code
+          >
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr class="t-dcl">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp">
+            <span class="kw1">template</span>
+            <span class="sy1"><</span>
+            <br />
+            <p>
+              &nbsp;&nbsp;
+              <span class="kw1"> class</span>
+              &nbsp;T,
+              <br />
+              &nbsp;&nbsp;
+              <span class="kw1"> class</span>
+              &nbsp;Hash&nbsp;
+              <span class="sy1">=</span>
+              <span class="kw704">
+                <a href="https://en.cppreference.com/w/cpp/utility/hash"
+                  >std::hash</a
+                >
+              </span>
+              <br />
+              &nbsp;&nbsp;
+              <span class="kw1"> class</span>
+              &nbsp;KeyEqual&nbsp;
+              <span class="sy1">=</span>
+              <span class="kw704">
+                <a
+                  href="https://en.cppreference.com/w/cpp/utility/functional/equal_to"
+                  >std::equal_to</a
+                >
+              </span>
+              <br />
+              <span class="sy1">></span>
+              <span class="kw1"> class</span>
+              deque_of_unique
+              <span class="sy4">;</span>
+            </p>
+          </span>
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  Combining the characteristics of a double-ended queue (<code
+    ><a
+      href="https://en.cppreference.com/w/cpp/container/deque"
+      title="std::deque"
+      >std::deque</a
+    ></code
+  >) and an
+  <code
+    ><a
+      href="https://en.cppreference.com/w/cpp/container/unordered_set"
+      title="std::unordered_set"
+      >std::unordered_set</a
+    ></code
+  >, the <code>deque_of_unique</code> ensures that all elements are unique and
+  can be accessed or modified from both ends. This makes it perfect for
+  applications where maintaining order and preventing duplicates is essential.
+</p>
+<h3>
+  <span class="mw-headline" id="Template_parameters">Template parameters</span>
+</h3>
+<table class="t-par-begin">
+  <tbody>
+    <tr class="t-par">
+      <td>T</td>
+      <td>-</td>
+      <td>
+        The type of the elements.
+        <table class="t-rev-begin">
+          <tbody>
+            <tr class="t-rev t-since-cxx11">
+              <td>
+                The requirements that are imposed on the elements depend on the
+                actual operations performed on the container. Generally, it is
+                required that element type is a complete type and meets the
+                requirements of
+                <a
+                  href="https://en.cppreference.com/w/cpp/named_req/Erasable"
+                  title="cpp/named req/Erasable"
+                  ><span
+                    style="
+                      font-family: Georgia, 'DejaVu Serif', serif;
+                      font-style: italic;
+                    "
+                    >Erasable</span
+                  ></a
+                >, but many member functions impose stricter requirements.
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <span
+            class="editsection noprint plainlinks"
+            title="Edit this template"
+            ><a
+              rel="nofollow"
+              class="external text"
+              href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/param_list_T&amp;action=edit"
+              >[edit]</a
+            ></span
+          >
+        </p>
+      </td>
+    </tr>
+    <tr class="t-par">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<h3>
+  <span class="mw-headline" id="Iterator_invalidation"
+    >Iterator invalidation</span
+  >
+</h3>
+<table class="dsctable" style="font-size: 0.9em">
+  <tbody>
+    <tr>
+      <th>Operations</th>
+      <th>Invalidated</th>
+    </tr>
+    <tr>
+      <td>All read only operations.</td>
+      <td>Never.</td>
+    </tr>
+    <tr>
+      <td>
+        <span class="t-lc"
+          ><a href="swap" title="containerofunique/deque_of_unique/swap"
+            >swap</a
+          ></span
+        >,
+        <span class="t-lc"
+          ><a href="/w/cpp/algorithm/swap" title="cpp/algorithm/swap"
+            >std::swap</a
+          ></span
+        >
+      </td>
+      <td>
+        The past-the-end iterator may be invalidated (implementation defined).
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="t-lc"
+          ><a href="clear" title="containerofunique/deque_of_unique/clear"
+            >clear</a
+          ></span
+        >,
+        <span class="t-lc"
+          ><a href="insert" title="containerofunique/deque_of_unique/insert"
+            >insert</a
+          ></span
+        >,
+        <span class="t-lc"
+          ><a href="emplace" title="containerofunique/deque_of_unique/emplace"
+            >emplace</a
+          ></span
+        >,
+        <span class="t-lc"
+          ><a
+            href="push_front"
+            title="containerofunique/deque_of_unique/push front"
+            >push_front</a
+          ></span
+        >,<br /><span class="t-lc"
+          ><a
+            href="push_back"
+            title="containerofunique/deque_of_unique/push back"
+            >push_back</a
+          ></span
+        >,
+        <span class="t-lc"
+          ><a
+            href="emplace_front"
+            title="containerofunique/deque_of_unique/emplace front"
+            >emplace_front</a
+          ></span
+        >,
+        <span class="t-lc"
+          ><a
+            href="emplace_back"
+            title="containerofunique/deque_of_unique/emplace back"
+            >emplace_back</a
+          ></span
+        >
+      </td>
+      <td>Always.</td>
+    </tr>
+    <tr>
+      <td>
+        <span class="t-lc"
+          ><a href="erase" title="containerofunique/deque_of_unique/erase"
+            >erase</a
+          ></span
+        >
+      </td>
+      <td>
+        If erasing at begin and the last element is not erased - only erased
+        elements.<br />
+        If erasing at begin and the last element is also erased - erased
+        elements and the past-the-end iterator.<br />
+        <p>
+          If erasing at end - only erased elements and the past-the-end
+          iterator.<br />
+          Otherwise - all iterators are invalidated.<br />
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="t-lc"
+          ><a
+            href="/w/cpp/container/deque/pop_front"
+            title="cpp/container/deque/pop front"
+            >pop_front</a
+          ></span
+        >,
+        <span class="t-lc"
+          ><a
+            href="/w/cpp/container/deque/pop_back"
+            title="cpp/container/deque/pop back"
+            >pop_back</a
+          ></span
+        >
+      </td>
+      <td>
+        To the element erased.<br />
+        <p>The past-the-end iterator is also invalidated.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3>
+  <span class="mw-headline" id="Member types"> Member types</span>
+</h3>
+<table class="t-dsc-begin">
+  <tbody>
+    <tr class="t-dsc-hitem">
+      <td>Type</td>
+      <td>Definition</td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <code>value_type</code>
+      </td>
+      <td>
+        <code>T</code>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <code>key_type</code>
+      </td>
+      <td>
+        <code>T</code>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <code>hasher</code>
+      </td>
+      <td>
+        <code>Hash</code>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <code>key_equal</code>
+      </td>
+      <td>
+        <code>KeyEqual</code>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <code>reference</code>
+      </td>
+      <td>
+        <span class="mw-geshi cpp source-cpp"
+          >value_type<span class="sy3">&amp;</span></span
+        >
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <code>const_reference</code>
+      </td>
+      <td>
+        <span class="mw-geshi cpp source-cpp">
+          <span class="kw4">const</span>
+          value_type
+          <span class="sy3">&amp;</span></span
+        >
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <code>deque_type</code>
+      </td>
+      <td>
+        <code
+          ><a
+            href="https://en.cppreference.com/w/cpp/container/deque"
+            title="std::deque"
+            >std::deque</a
+          ></code
+        >
+        <span class="sy1">&lt;</span><code>T</code
+        ><span class="sy1">&gt;</span>;
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <code>unordered_set_type</code>
+      </td>
+      <td>
+        <code
+          ><a
+            href="https://en.cppreference.com/w/cpp/container/unordered_set"
+            title="std::unordered_set"
+            >std::unordered_set</a
+          ><span class="sy1">&lt;</span>T, Hash, KeyEqual<span class="sy1"
+            >&gt;</span
+          ></code
+        >
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <code>size_type</code>
+      </td>
+      <td>
+        <code>deque_type::size_type</code>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <code>iterator</code>
+      </td>
+      <td>
+        <code>deque_type::iterator</code>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <code>const_iterator</code>
+      </td>
+      <td>
+        <code>deque_type::const_iterator</code>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <code>reverse_iterator</code>
+      </td>
+      <td>
+        <code>deque_type::reverse_iterator</code>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <code>const_reverse_iterator</code>
+      </td>
+      <td>
+        <code>deque_type::const_reverse_iterator</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p><br /></p>
+<h3>
+  <span class="mw-headline" id="Member functions"> Member functions </span>
+</h3>
+<table class="t-dsc-begin">
+  <tbody>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-nobold-div">
+          <a
+            href="constructor"
+            title="containerofunique/deque_of_unique/deque_of_unique"
+          >
+            <span>(constructor)</span>
+          </a>
+        </div>
+      </td>
+      <td>
+        &nbsp;constructs the&nbsp;
+        <code>deque_of_unique</code>
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-nobold-div">
+          <a
+            href="destructor"
+            title="containerofunique/deque_of_unique/~deque_of_unique"
+          >
+            <span>(destructor)</span>
+          </a>
+        </div>
+      </td>
+      <td>
+        &nbsp;destructs the&nbsp;
+        <code>deque_of_unique</code>
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a
+              href="operator="
+              title="containerofunique/deque_of_unique/operator="
+            >
+              <span>operator=</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;assign values to the container&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="assign" title="containerofunique/deque_of_unique/assign">
+              <span>assign</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;assign values to the container&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <h5>
+          <span class="mw-headline" id="Element access">Element Access</span>
+        </h5>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="at" title="containerofunique/deque_of_unique/">
+              <span>at</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;access specified element with bounds checking&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a
+              href="operator_at"
+              title="containerofunique/deque_of_unique/operator_at"
+            >
+              <span>operator[]</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;access specified element&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="front" title="containerofunique/deque_of_unique/front">
+              <span>front</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;access the first element&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="back" title="containerofunique/deque_of_unique/back">
+              <span>back</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;access the last element&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <h5>
+          <span class="mw-headline" id="Iterators">Iterators</span>
+        </h5>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="cbegin" title="containerofunique/deque_of_unique/cbegin">
+              <span>cbegin</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;return an iterator to the begining&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="cend" title="containerofunique/deque_of_unique/cend">
+              <span>cend</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;return an iterator to the end&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="crbegin" title="containerofunique/deque_of_unique/crbegin">
+              <span>crbegin</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;return a reverse iterator to the begining&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="crend" title="containerofunique/deque_of_unique/crend">
+              <span>crend</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;return a reverse iterator to the end&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <h5>
+          <span class="mw-headline" id="Capacity">Capacity</span>
+        </h5>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="empty" title="containerofunique/deque_of_unique/empty">
+              <span>empty</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;checks whether the container is empty&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="size" title="containerofunique/deque_of_unique/size">
+              <span>size</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;returns the number of unique entries&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <h5>
+          <span class="mw-headline" id="Modifiers">Modifiers</span>
+        </h5>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="clear" title="containerofunique/deque_of_unique/clear">
+              <span>clear</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;clear the contents&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="insert" title="containerofunique/deque_of_unique/insert">
+              <span>insert</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;inserts elements&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="erase" title="containerofunique/deque_of_unique/erase">
+              <span>erase</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;erases elements&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a
+              href="push_back"
+              title="containerofunique/deque_of_unique/push_back"
+            >
+              <span>push_back</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;adds an element to the end&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="emplace" title="containerofunique/deque_of_unique/emplace">
+              <span>emplace</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;constructs element in-place&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a
+              href="emplace_back"
+              title="containerofunique/deque_of_unique/emplace_back"
+            >
+              <span>emplace_back</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;constructs element in-place at the end&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a
+              href="pop_back"
+              title="containerofunique/deque_of_unique/pop_back"
+            >
+              <span>pop_back</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;removes the last element to the end&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a
+              href="push_front"
+              title="containerofunique/deque_of_unique/push_front"
+            >
+              <span>push_front</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;inserts an element to the begining&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a
+              href="emplace_front"
+              title="containerofunique/deque_of_unique/emplace_front"
+            >
+              <span>emplace_front</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;constructs element in-place at the begining&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a
+              href="pop_front"
+              title="containerofunique/deque_of_unique/pop_front"
+            >
+              <span>pop_front</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;removes the first element&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="swap" title="containerofunique/deque_of_unique/swap">
+              <span>swap</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;removes the contents&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <h5>
+          <span class="mw-headline" id="Look up">Look up</span>
+        </h5>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="find" title="containerofunique/deque_of_unique/find">
+              <span>find</span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;finds element with specific key&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a
+              href="contains"
+              title="containerofunique/deque_of_unique/contains"
+            >
+              <span>contains</span>
+            </a>
+          </div>
+          <div>
+            <span class="t-lines"
+              ><span
+                ><span class="t-mark-rev t-since-cxx20">(C++20)</span></span
+              ></span
+            >
+          </div>
+        </div>
+      </td>
+      <td>
+        &nbsp;checks if the container contains element with specific key&nbsp;
+        <br />
+        <span class="t-mark">(public member function)</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3>
+  <span class="mw-headline" id="Non-member functions">
+    Non-member functions
+  </span>
+</h3>
+<table class="t-dsc-begin">
+  <tbody>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a
+              href="operator_cmp"
+              title="containerofunique/deque_of_unique/operator_cmp"
+            >
+              <span class="t-lines"
+                ><span>operator==</span><span>operator!=</span
+                ><span>operator&lt;</span><span>operator&lt;=</span
+                ><span>operator&gt;</span><span>operator&gt;=</span
+                ><span>operator&lt;=&gt;</span></span
+              ></a
+            >
+          </div>
+          <div>
+            <span class="t-lines"
+              ><span></span
+              ><span
+                ><span class="t-mark-rev t-until-cxx20"
+                  >(removed in C++20)</span
+                ></span
+              ><span
+                ><span class="t-mark-rev t-until-cxx20"
+                  >(removed in C++20)</span
+                ></span
+              ><span
+                ><span class="t-mark-rev t-until-cxx20"
+                  >(removed in C++20)</span
+                ></span
+              ><span
+                ><span class="t-mark-rev t-until-cxx20"
+                  >(removed in C++20)</span
+                ></span
+              ><span
+                ><span class="t-mark-rev t-until-cxx20"
+                  >(removed in C++20)</span
+                ></span
+              ><span
+                ><span class="t-mark-rev t-since-cxx20">(C++20)</span></span
+              ></span
+            >
+          </div>
+        </div>
+      </td>
+      <td>
+        lexicographically compares the values of two <code>deque</code>s <br />
+        <span class="t-mark">(function template)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="swap2" title="containerofunique/deque_of_unique/swap2">
+              <span class="t-lines"
+                ><span
+                  >std::swap<span class="t-dsc-small"
+                    >(containerofunique::deque_of_unique)</span
+                  ></span
+                ></span
+              ></a
+            >
+          </div>
+        </div>
+      </td>
+      <td>
+        specializes the
+        <span class="t-lc"
+          ><a
+            href="https://en.cppreference.com/w/cpp/algorithm/swap"
+            title="cpp/algorithm/swap2"
+            >std::swap</a
+          ></span
+        >
+        algorithm <br />
+        <span class="t-mark">(function template)</span>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td>
+        <div class="t-dsc-member-div">
+          <div>
+            <a href="erase2" title="containerofunique/deque_of_unique/erase2">
+              <span class="t-lines"
+                ><span
+                  >erase<span class="t-dsc-small"
+                    >(containerofunique::deque_of_unique)</span
+                  ></span
+                ><span
+                  >erase_if<span class="t-dsc-small"
+                    >(containerofunique::deque_of_unique)</span
+                  ></span
+                ></span
+              ></a
+            >
+          </div>
+          <div>
+            <span class="t-lines"
+              ><span
+                ><span class="t-mark-rev t-since-cxx20">(C++20)</span></span
+              ></span
+            >
+          </div>
+        </div>
+      </td>
+      <td>
+        erases all elements satisfying specific criteria <br />
+        <span class="t-mark">(function template)</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3><span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example">
+  <div dir="ltr" class="mw-geshi t-example-code" style="text-align: left">
+    <div class="cpp source-cpp">
+      <pre class="de1" style="border: none">
+<span class="co2">#include &lt;deque&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include "deque_of_unique.h"</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="co1">// Create a deque_of_unique containing integers</span>
+    containerofunique<span class="sy4">::</span><span class="me2">deque_of_unique</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> und <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">3</span>, <span class="nu0">5</span>, <span class="nu0">20</span>, <span class="nu0">9</span><span class="br0">}</span><span class="sy4">;</span>
+    &nbsp;
+    <span class="co1">// Add an integer to the beginning and end of the deque_of_unique</span>
+    und.<span class="me1">push_front</span><span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span>
+    und.<span class="me1">push_back</span><span class="br0">(</span><span class="nu0">28</span><span class="br0">)</span><span class="sy4">;</span>
+    &nbsp;
+    <span class="co1">// print values of deque_of_unique</span>
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> n <span class="sy4">:</span> und.<span class="me1">deque</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+    <span class="kw1773">std::<span class="me2">cout</span></span>
+    <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
+    <span class="kw1773">std::<span class="me2">cout</span></span>
+    <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span>
+                        </pre>
+    </div>
+  </div>
+  <p>output</p>
+  <div class="mw-geshi" style="text-align: left">
+    <div class="text source-text"><pre class="de1">3 5 20 9 28</pre></div>
+  </div>
+</div>
+<p><br /></p>

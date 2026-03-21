@@ -1,0 +1,55 @@
+---
+last_modified_at: "2025-01-04 13:13:57 +0800"
+layout: deque_of_unique_method
+title: pop_front
+---
+
+<table class="t-dcl-begin">
+  <tbody>
+    <tr class="t-dcl">
+      <td class="t-dcl-nopad">
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            ><span class="kw4">void</span> pop_front<span class="br0">(</span
+            ><span class="br0">)</span><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td class="t-dcl-nopad"></td>
+      <td class="t-dcl-nopad"></td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  Removes the first element of the container. If there are no elements in the
+  container, the behavior is undefined.
+</p>
+<p>
+  Iterators and references to the erased element are invalidated. If the element
+  is the last element in the container, the
+  <a
+    href="{{ '/_docs/deque_of_unique/cend' | relative_url }}"
+    title="containerofunique/deque_of_unique/cend"
+    ><code>cend()</code></a
+  >
+  iterator is also invalidated. Other references and iterators are not affected.
+</p>
+<h3>
+  <span class="mw-headline" id="Parameters">Parameters</span>
+</h3>
+<p>(none)</p>
+<h3><span class="mw-headline" id="Return_value">Return value</span></h3>
+<p>(none)</p>
+<h3>
+  <span class="mw-headline" id="Complexity">Complexity</span>
+</h3>
+<p>Constant.</p>
+<h3>
+  <span class="mw-headline" id="Exceptions">Exceptions</span>
+</h3>
+<p>Throws nothing.</p>

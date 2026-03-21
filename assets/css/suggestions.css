@@ -1,0 +1,13 @@
+.suggestions a.mw-searchSuggest-link,
+.suggestions a.mw-searchSuggest-link:hover,
+.suggestions a.mw-searchSuggest-link:active,
+.suggestions a.mw-searchSuggest-link:focus {
+  text-decoration: none;
+  color: black;
+}
+.suggestions-result-current a.mw-searchSuggest-link,
+.suggestions-result-current a.mw-searchSuggest-link:hover,
+.suggestions-result-current a.mw-searchSuggest-link:active,
+.suggestions-result-current a.mw-searchSuggest-link:focus {
+  color: white;
+}

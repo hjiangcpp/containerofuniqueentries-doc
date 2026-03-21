@@ -1,0 +1,62 @@
+---
+last_modified_at: "2025-01-04 13:13:57 +0800"
+layout: deque_of_unique_method
+title: crbegin
+---
+
+<table class="t-dcl-begin">
+  <tbody>
+    <tr class="t-dcl">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            >const_reverse_iterator crbegin<span class="br0">(</span
+            ><span class="br0">)</span> <span class="kw4">const</span
+            ><span class="kw1"> noexcept</span><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  Returns a reverse iterator to the first element of the reversed
+  <code>deque_of_unique</code>. It corresponds to the last element of the
+  non-reversed <code>deque_of_unique</code>. If the
+  <code>deque_of_unique</code> is empty, the returned iterator is equal to
+  <span class="t-lc"
+    ><a
+      href="{{ '/_docs/deque_of_unique/crend' | relative_url }}"
+      title="containerofunique/deque_of_unique/crend"
+      >crend()</a
+    ></span
+  >.
+</p>
+
+<div class="t-image">
+  <p>
+    <img
+      alt="range-rbegin-rend.svg"
+      src="https://upload.cppreference.com/mwiki/images/3/39/range-rbegin-rend.svg"
+      width="589"
+      height="250"
+    />
+  </p>
+</div>
+<h3>
+  <span class="mw-headline" id="Parameters">Parameters</span>
+</h3>
+<p>(none)</p>
+<h3><span class="mw-headline" id="Return_value">Return value</span></h3>
+<p>Iterator to the element following the last element.</p>
+<h3>
+  <span class="mw-headline" id="Complexity">Complexity</span>
+</h3>
+<p>Constant.</p>
+<h3>Exceptions</h3>
+<p>(none)</p>

@@ -1,0 +1,118 @@
+---
+last_modified_at: "2025-04-24 15:54:35 +0800"
+layout: vector_of_unique_method
+title: pop_back
+---
+
+<table class="t-dcl-begin">
+  <tbody>
+    <tr class="t-dcl">
+      <td class="t-dcl-nopad">
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            ><span class="kw4">void</span> pop_back<span class="br0">(</span
+            ><span class="br0">)</span><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td class="t-dcl-nopad"></td>
+      <td class="t-dcl-nopad"></td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p>Removes the last element of the container.</p>
+<table class="t-rev-begin">
+  <tbody>
+    <tr class="t-rev t-until-cxx26">
+      <td>
+        <p>
+          If
+          <span class="t-lc"
+            ><a
+              href="/w/cpp/container/vector/empty"
+              title="cpp/container/vector/empty"
+              >empty()</a
+            ></span
+          >
+          is
+          <span class="t-c"
+            ><span class="mw-geshi cpp source-cpp"
+              ><span class="kw2">true</span></span
+            ></span
+          >, the behavior is undefined.
+        </p>
+      </td>
+      <td><span class="t-mark-rev t-until-cxx26">(until C++26)</span></td>
+    </tr>
+    <tr class="t-rev t-since-cxx26">
+      <td>
+        <p>
+          If
+          <span class="t-lc"
+            ><a
+              href="/w/cpp/container/vector/empty"
+              title="cpp/container/vector/empty"
+              >empty()</a
+            ></span
+          >
+          is
+          <span class="t-c"
+            ><span class="mw-geshi cpp source-cpp"
+              ><span class="kw2">true</span></span
+            ></span
+          >:
+        </p>
+        <ul>
+          <li>
+            If the implementation is
+            <a
+              href="/w/cpp/standard_library#Standard_library_hardening"
+              title="cpp/standard library"
+              >hardened</a
+            >, a
+            <a href="/w/cpp/language/contracts" title="cpp/language/contracts"
+              >contract violation</a
+            >
+            occurs. Moreover, if the contract-violation handler returns under
+            “observe” evaluation semantic, the behavior is undefined.
+          </li>
+          <li>
+            If the implementation is not hardened, the behavior is undefined.
+          </li>
+        </ul>
+      </td>
+      <td><span class="t-mark-rev t-since-cxx26">(since C++26)</span></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  Iterators and references to the last element are invalidated. The
+  <a
+    href="{{ '/_docs/vector_of_unique/cend' | relative_url }}"
+    title="containerofunique/vector_of_unique/cend"
+    ><code>cend()</code></a
+  >
+  iterator is also invalidated.
+</p>
+<h3>
+  <span class="mw-headline" id="Parameters">Parameters</span>
+</h3>
+<p>(none)</p>
+<h3><span class="mw-headline" id="Return_value">Return value</span></h3>
+<p>(none)</p>
+<h3>
+  <span class="mw-headline" id="Complexity">Complexity</span>
+</h3>
+<p>
+  Average case: constant.<br />
+  Worst case: linear in the size of the container.
+</p>
+<h3>
+  <span class="mw-headline" id="Exceptions">Exceptions</span>
+</h3>
+<p>Throws nothing.</p>

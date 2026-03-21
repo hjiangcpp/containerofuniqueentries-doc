@@ -1,0 +1,305 @@
+---
+last_modified_at: "2025-01-04 15:06:39 +0800"
+layout: deque_of_unique_method
+title: constructor
+---
+
+<table class="t-dcl-begin">
+  <tbody>
+    <tr class="t-dcl">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp">
+            deque_of_unique<span class="br0">(</span><span class="br0">)</span>
+            <span class="br0">{</span><span class="br0">}</span>
+          </span>
+        </div>
+      </td>
+      <td>(1)</td>
+    </tr>
+  </tbody>
+  <tbody class="t-dcl-rev t-dcl-rev-num">
+    <tr class="t-dcl">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            ><span class="kw1">explicit</span> deque_of_unique<span class="br0"
+              >(</span
+            >
+            <span class="br0">)</span><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(2)</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr class="t-dcl">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp">
+            <span class="kw1">template</span><span class="sy1">&lt;</span
+            ><span class="kw1">class</span>&nbsp;input_it<span class="sy1"
+              >&gt;</span
+            >
+            <br />
+            deque_of_unique<span class="br0">(</span>&nbsp;input_it first,
+            input_it last <span class="br0">)</span><span class="sy4">;</span>
+          </span>
+        </div>
+      </td>
+      <td>(3)</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr class="t-dcl">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            >deque_of_unique<span class="br0">(</span>
+            <a href="http://en.cppreference.com/w/cpp/utility/initializer_list"
+              ><span class="kw964"
+                >std::<span class="me2">initializer_list</span></span
+              ></a
+            ><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> init
+            <span class="br0">)</span> <span class="br0">)</span
+            ><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(4)</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr class="t-dcl">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            >deque_of_unique<span class="br0">(</span>
+            <span class="kw4">const</span> deque_of_unique<span class="sy3"
+              >&amp;</span
+            >
+            other <span class="br0">)</span><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(5)</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr class="t-dcl">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            >deque_of_unique<span class="br0">(</span> deque_of_unique<span
+              class="sy3"
+              >&amp;&amp;</span
+            >
+            other <span class="br0">)</span><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(6)</td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Constructs a new deque_of_unique from a variety of data sources.</p>
+
+<div class="t-li1">
+  <span class="t-li">1)</span> The default constructor. Constructs an empty
+  deque_of_unique.
+</div>
+
+<div class="t-li1">
+  <span class="t-li">2)</span> The default constructor with the
+  <span class="t-c mw-geshi cpp source-cpp"
+    ><span class="kw1">explicit</span></span
+  >
+  keyword, preventing implicit conversions or copy-initialization from other
+  types.
+</div>
+
+<div class="t-li1">
+  <span class="t-li">3)</span> Constructs a deque_of_unique with the contents of
+  the range
+  <span style="display: inline-block"
+    ><code>[</code
+    ><span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span
+    ><code>,&nbsp;</code
+    ><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span
+    ><code>)</code></span
+  >
+  and inserting only the unique elements from the given range into the
+  container. Duplicate elements are automatically excluded, and only the first
+  occurrence of each element is retained. Each iterator in
+  <span style="display: inline-block"
+    ><code>[</code
+    ><span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span
+    ><code>,&nbsp;</code
+    ><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span
+    ><code>)</code></span
+  >
+  is dereferenced exactly once.
+</div>
+
+<div class="t-li1">
+  <span class="t-li">4)</span> Equivalent to
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      >deque_of_unique<span class="br0">(</span>il.<span class="me1">begin</span
+      ><span class="br0">(</span><span class="br0">)</span>, il.<span
+        class="me1"
+        >end</span
+      ><span class="br0">(</span><span class="br0">)</span
+      ><span class="br0">)</span></span
+    ></span
+  >.
+</div>
+
+<div class="t-li1">
+  <span class="t-li">5)</span> The copy constructor. Constructs a
+  <code>deque_of_unique</code> with the contents of <code>other</code>.
+</div>
+
+<div class="t-li1">
+  <span class="t-li">6)</span> The move constructor. Constructs a
+  <code>deque_of_unique</code> with the contents of <code>other</code>.
+</div>
+
+<h3><strong>Parameters</strong></h3>
+
+<table class="t-par-begin">
+  <tbody>
+    <tr class="t-par">
+      <td><strong>value</strong></td>
+      <td>-</td>
+      <td>The value of the element to append.</td>
+    </tr>
+    <tr class="t-par">
+      <td>first, last</td>
+      <td>-</td>
+      <td>the range to copy the elements from</td>
+    </tr>
+    <tr class="t-par">
+      <td>other</td>
+      <td>-</td>
+      <td>
+        another container to be used as source to initialize the elements of the
+        container with
+      </td>
+    </tr>
+    <tr class="t-par">
+      <td>init</td>
+      <td>-</td>
+      <td>initializer list to initialize the elements of the container with</td>
+    </tr>
+  </tbody>
+</table>
+<h3>
+  <span class="mw-headline" id="Complexity">Complexity</span>
+</h3>
+<table class="t-dsc-begin">
+  <tbody>
+    <tr class="t-dsc">
+      <td style="text-align: right">1,2)</td>
+      <td>
+        <div><span class="t-li4">Constant.</span></div>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td style="text-align: right">3)</td>
+      <td>
+        <div>
+          <span class="t-li4"
+            >Average case: linear (i.e.
+            <span class="texhtml" style="white-space: nowrap">O(N)</span>, where
+            <span class="texhtml" style="white-space: nowrap">N</span> is
+            <span class="t-c"
+              ><span class="mw-geshi cpp source-cpp"
+                ><a href="http://en.cppreference.com/w/cpp/iterator/distance"
+                  ><span class="kw678"
+                    >std::<span class="me2">distance</span></span
+                  ></a
+                ><span class="br0">(</span>first, last<span class="br0"
+                  >)</span
+                ></span
+              ></span
+            >
+            assuming no duplicates. If the element is a duplicate, the
+            complexity is
+            <span class="texhtml" style="white-space: nowrap">O(1)</span> since
+            no insertion occurs.. <br />Worst case: quadratic, i.e.
+            <span class="texhtml" style="white-space: nowrap"
+              >O(N<sup>2</sup>).</span
+            ></span
+          >
+        </div>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td style="text-align: right">4)</td>
+      <td>
+        <div>
+          <span class="t-li4">
+            Average case
+            <span class="texhtml" style="white-space: nowrap">O(N)</span> (<span
+              class="texhtml"
+              style="white-space: nowrap"
+              >N</span
+            >
+            is
+            <span class="t-c"
+              ><span class="mw-geshi cpp source-cpp"
+                ><a href="http://en.cppreference.com/w/cpp/iterator/size"
+                  ><span class="kw689"
+                    >std::<span class="me2">size</span></span
+                  ></a
+                ><span class="br0">(</span>init<span class="br0">)</span></span
+              ></span
+            >).<br />
+            Worst case:
+            <span class="texhtml" style="white-space: nowrap"
+              >O(N<sup>2</sup>)</span
+            >.
+          </span>
+        </div>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td style="text-align: right">5)</td>
+      <td>
+        <div>
+          <span class="t-li4">
+            Linear in
+            <span class="t-c"
+              ><span class="mw-geshi cpp source-cpp"
+                >other.<span class="me1">size</span><span class="br0">(</span
+                ><span class="br0">)</span></span
+              ></span
+            >.</span
+          >
+        </div>
+      </td>
+    </tr>
+    <tr class="t-dsc">
+      <td style="text-align: right">6)</td>
+      <td>
+        <div>
+          <span class="t-li4">Constant.</span>
+        </div>
+      </td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<h3>Exceptions</h3>
+<p>(none)</p>

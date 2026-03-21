@@ -1,0 +1,98 @@
+---
+last_modified_at: "2025-01-04 13:13:57 +0800"
+layout: deque_of_unique_method
+title: at
+---
+
+<table class="t-dcl-begin">
+  <tbody>
+    <tr class="t-dcl">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            >const_reference at<span class="br0">(</span> size_type pos
+            <span class="br0">)</span> <span class="kw4">const</span
+            ><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  Returns a reference to the element at specified location
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span
+  >, with bounds checking.
+</p>
+<p>
+  If
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">pos</span></span>
+  is not within the range of the container, an exception of type
+  <span class="t-lc"
+    ><a
+      href="https://en.cppreference.com/w/cpp/error/out_of_range"
+      title="cpp/error/out of range"
+      >std::out_of_range</a
+    ></span
+  >
+  is thrown.
+</p>
+<h3>
+  <span class="mw-headline" id="Parameters">Parameters</span>
+</h3>
+<table class="t-par-begin">
+  <tbody>
+    <tr class="t-par">
+      <td>pos</td>
+      <td>-</td>
+      <td>position of the element to return</td>
+    </tr>
+  </tbody>
+</table>
+<h3><span class="mw-headline" id="Return_value">Return value</span></h3>
+<p>Reference to the requested element.</p>
+<h3>
+  <span class="mw-headline" id="Exceptions">Exceptions</span>
+</h3>
+<p>
+  <span class="t-lc"
+    ><a
+      href="https://en.cppreference.com/w/cpp/error/out_of_range"
+      title="cpp/error/out of range"
+      >std::out_of_range</a
+    ></span
+  >
+  if
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      >pos <span class="sy1">&gt;=</span> size<span class="br0">(</span
+      ><span class="br0">)</span></span
+    ></span
+  >.
+</p>
+<h3>
+  <span class="mw-headline" id="Complexity">Complexity</span>
+</h3>
+<p>Constant.</p>
+<h3>Exceptions</h3>
+<p>
+  <span class="t-lc"
+    ><a
+      href="https://en.cppreference.com/w/cpp/error/out_of_range"
+      title="cpp/error/out of range"
+      >std::out_of_range</a
+    ></span
+  >
+  if
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      >pos <span class="sy1">&gt;=</span> size<span class="br0">(</span
+      ><span class="br0">)</span></span
+    ></span
+  >.
+</p>

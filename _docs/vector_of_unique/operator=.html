@@ -1,0 +1,186 @@
+---
+last_modified_at: "2025-01-06 19:22:26 +0800"
+layout: vector_of_unique_method
+title: operator=
+---
+
+<table class="t-dcl-begin">
+  <tbody>
+    <tr class="t-dcl">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            >vector_of_unique<span class="sy3">&amp;</span> operator<span
+              class="sy1"
+              >=</span
+            ><span class="br0">(</span>
+            <span class="kw4">const</span> vector_of_unique<span class="sy3"
+              >&amp;</span
+            >
+            other <span class="br0">)</span><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(1)</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr class="t-dcl">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            >vector_of_unique<span class="sy3">&amp;</span> operator<span
+              class="sy1"
+              >=</span
+            ><span class="br0">(</span> vector_of_unique<span class="sy3"
+              >&amp;&amp;</span
+            >
+            other <span class="br0">)</span><span class="br0">(</span
+            ><span class="br0">)</span><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(2)</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr class="t-dcl">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            >vector_of_unique<span class="sy3">&amp;</span> operator<span
+              class="sy1"
+              >=</span
+            ><span class="br0">(</span>
+            <span class="kw964"
+              >std::<span class="me2">initializer_list</span></span
+            ><span class="sy1">&lt;</span>value_type<span class="sy1"
+              >&gt;</span
+            >
+            ilist <span class="br0">)</span><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(3)</td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p>Replaces the contents of the container.</p>
+<div class="t-li1">
+  <span class="t-li">1)</span> Copy assignment operator. Replaces the contents
+  with a copy of the contents of
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">other</span></span
+  >.
+</div>
+<div class="t-li1">
+  <span class="t-li">2)</span> Move assignment operator. Replaces the contents
+  with those of
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">other</span></span>
+  using move semantics (i.e. the data in
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">other</span></span> is
+  moved from
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">other</span></span>
+  into this container).
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">other</span></span> is
+  in a valid but unspecified state afterwards.
+</div>
+<div class="t-li1">
+  <span class="t-li">3)</span> Replaces the contents with those identified by
+  initializer list
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">ilist</span></span
+  >.
+</div>
+<h3><span class="mw-headline" id="Parameters">Parameters</span></h3>
+<table class="t-par-begin">
+  <tbody>
+    <tr class="t-par">
+      <td>other</td>
+      <td>-</td>
+      <td>another container to use as data source</td>
+    </tr>
+    <tr class="t-par">
+      <td>ilist</td>
+      <td>-</td>
+      <td>initializer list to use as data source</td>
+    </tr>
+  </tbody>
+</table>
+<h3><span class="mw-headline" id="Return_value">Return value</span></h3>
+<p>
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      ><span class="sy2">*</span>this</span
+    ></span
+  >
+</p>
+<h3>Complexity</h3>
+<div class="t-li1">
+  <span class="t-li">1)</span> Linear in the size of
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      ><span class="sy2">*</span>this</span
+    ></span
+  >
+  and <span class="t-c"><span class="mw-geshi cpp source-cpp">other</span></span
+  >.
+</div>
+<div class="t-li1">
+  <span class="t-li">2)</span> Linear in the size of
+  <span class="t-c mw-geshi cpp source-cpp"
+    ><span class="sy2">*</span>this</span
+  >
+  unless the allocators do not compare equal and do not propagate, in which case
+  linear in the size of
+  <span class="t-c mw-geshi cpp source-cpp"
+    ><span class="sy2">*</span>this</span
+  >
+  and <span class="t-c mw-geshi cpp source-cpp">other</span>.
+</div>
+<div class="t-li1">
+  <span class="t-li">3)</span> Linear in the size of
+  <span class="t-c mw-geshi cpp source-cpp"
+    ><span class="sy2">*</span>this</span
+  >
+  and <span class="t-c mw-geshi cpp source-cpp">ilist</span>.
+</div>
+<h3>
+  <span class="mw-headline" id="Exceptions">Exceptions</span>
+</h3>
+<div class="t-li1">
+  <span class="t-li">1)</span>
+  The copy assignment operator may throw exceptions if the copy constructor or
+  copy assignment operator of
+  <span class="t-c mw-geshi cpp source-cpp">T</span> throws.
+</div>
+<div class="t-li1">
+  <span class="t-li">2)</span>
+  The move assignment operator does not throw exceptions (<span
+    class="t-c mw-geshi cpp source-cpp"
+    >noexcept</span
+  >).
+</div>
+<div class="t-li1">
+  <span class="t-li">3)</span>
+  The assignment operator from
+  <span class="t-c mw-geshi cpp source-cpp">std::initializer_list</span> may
+  throw exceptions if:
+  <li>
+    The constructor of <span class="t-c mw-geshi cpp source-cpp">T</span> throws
+    when creating elements from
+    <span class="t-c mw-geshi cpp source-cpp">ilist</span>.
+  </li>
+  <li>
+    The move constructor of
+    <span class="t-c mw-geshi cpp source-cpp">T</span> or
+    <span class="t-c mw-geshi cpp source-cpp">std::swap</span>. throws. Provides
+    strong exception safety: if an exception is thrown during the construction
+    of a temporary
+    <span class="t-c mw-geshi cpp source-cpp">vector_of_unique</span>, the
+    original container remains unchanged.
+  </li>
+</div>

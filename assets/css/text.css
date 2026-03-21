@@ -1,0 +1,261 @@
+/*<![CDATA[*/
+.source-cpp {
+  line-height: normal;
+}
+.source-cpp li,
+.source-cpp pre {
+  line-height: normal;
+  border: 0px none white;
+}
+
+.cpp.source-cpp .de1,
+.cpp.source-cpp .de2 {
+  font: normal normal 1em/1.2em monospace;
+  margin: 0;
+  padding: 0;
+  background: none;
+  vertical-align: top;
+}
+.cpp.source-cpp {
+  font-family: monospace;
+}
+.cpp.source-cpp .imp {
+  font-weight: bold;
+  color: red;
+}
+.cpp.source-cpp li,
+.cpp.source-cpp .li1 {
+  font-weight: normal;
+  vertical-align: top;
+}
+.cpp.source-cpp .ln {
+  width: 1px;
+  text-align: right;
+  margin: 0;
+  padding: 0 2px;
+  vertical-align: top;
+}
+.cpp.source-cpp .li2 {
+  font-weight: bold;
+  vertical-align: top;
+}
+.cpp.source-cpp .kw1 {
+  color: #0000dd;
+}
+.cpp.source-cpp .kw2 {
+  color: #0000ff;
+}
+.cpp.source-cpp .kw3 {
+  color: #0000dd;
+}
+.cpp.source-cpp .kw4 {
+  color: #0000ff;
+}
+.cpp.source-cpp .co1 {
+  color: #909090;
+}
+.cpp.source-cpp .co2 {
+  color: #339900;
+}
+.cpp.source-cpp .coMULTI {
+  color: #ff0000;
+  font-style: italic;
+}
+.cpp.source-cpp .es0 {
+  color: #008000;
+  font-weight: bold;
+}
+.cpp.source-cpp .es1 {
+  color: #008000;
+  font-weight: bold;
+}
+.cpp.source-cpp .es2 {
+  color: #008000;
+  font-weight: bold;
+}
+.cpp.source-cpp .es3 {
+  color: #008000;
+  font-weight: bold;
+}
+.cpp.source-cpp .es4 {
+  color: #008000;
+  font-weight: bold;
+}
+.cpp.source-cpp .es5 {
+  color: #008000;
+  font-weight: bold;
+}
+.cpp.source-cpp .br0 {
+  color: #008000;
+}
+.cpp.source-cpp .sy0 {
+  color: #008000;
+}
+.cpp.source-cpp .sy1 {
+  color: #000080;
+}
+.cpp.source-cpp .sy2 {
+  color: #000040;
+}
+.cpp.source-cpp .sy3 {
+  color: #000040;
+}
+.cpp.source-cpp .sy4 {
+  color: #008080;
+}
+.cpp.source-cpp .st0 {
+  color: #008000;
+}
+.cpp.source-cpp .nu0 {
+  color: #000080;
+}
+.cpp.source-cpp .nu6 {
+  color: #000080;
+}
+.cpp.source-cpp .nu8 {
+  color: #000080;
+}
+.cpp.source-cpp .nu12 {
+  color: #000080;
+}
+.cpp.source-cpp .nu16 {
+  color: #000080;
+}
+.cpp.source-cpp .nu17 {
+  color: #000080;
+}
+.cpp.source-cpp .nu18 {
+  color: #000080;
+}
+.cpp.source-cpp .nu19 {
+  color: #000080;
+}
+.cpp.source-cpp .ln-xtra,
+.cpp.source-cpp li.ln-xtra,
+.cpp.source-cpp div.ln-xtra {
+  background-color: #ffc;
+}
+.cpp.source-cpp span.xtra {
+  display: block;
+}
+
+/*<![CDATA[*/
+.source-text {
+  line-height: normal;
+}
+.source-text li,
+.source-text pre {
+  line-height: normal;
+  border: 0px none white;
+}
+.text.source-text .de1,
+.text.source-text .de2 {
+  font: normal normal 1em/1.2em monospace;
+  margin: 0;
+  padding: 0;
+  background: none;
+  vertical-align: top;
+}
+.text.source-text {
+  font-family: monospace;
+}
+.text.source-text .imp {
+  font-weight: bold;
+  color: red;
+}
+.text.source-text li,
+.text.source-text .li1 {
+  font-weight: normal;
+  vertical-align: top;
+}
+.text.source-text .ln {
+  width: 1px;
+  text-align: right;
+  margin: 0;
+  padding: 0 2px;
+  vertical-align: top;
+}
+.text.source-text .li2 {
+  font-weight: bold;
+  vertical-align: top;
+}
+.text.source-text .ln-xtra,
+.text.source-text li.ln-xtra,
+.text.source-text div.ln-xtra {
+  background-color: #ffc;
+}
+.text.source-text span.xtra {
+  display: block;
+}
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, 0.1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 5px,
+      hsla(0, 0%, 0%, 0.025) 5px,
+      hsla(0, 0%, 0%, 0.025) 10px
+    )
+    hsla(203, 11%, 95%, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html {
+  font-variant-ligatures: no-common-ligatures;
+}

@@ -1,0 +1,111 @@
+---
+last_modified_at: "2025-01-04 13:13:57 +0800"
+layout: deque_of_unique_method
+title: constructor
+---
+
+<table class="t-dcl-begin">
+  <tbody>
+    <tr class="t-dcl t-since-cxx20">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            ><span class="kw4">bool</span> contains<span class="br0">(</span>
+            <span class="kw4">const</span> Key<span class="sy3">&amp;</span> key
+            <span class="br0">)</span> <span class="kw4">const</span
+            ><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(1)</td>
+      <td><span class="t-mark-rev t-since-cxx20">(since C++20)</span></td>
+    </tr>
+    <tr class="t-dcl t-since-cxx20">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            ><span class="kw1">template</span><span class="sy1">&lt;</span>
+            <span class="kw1">class</span> K <span class="sy1">&gt;</span><br />
+            <span class="kw4">bool</span> contains<span class="br0">(</span>
+            <span class="kw4">const</span> K<span class="sy3">&amp;</span> x
+            <span class="br0">)</span> <span class="kw4">const</span
+            ><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(2)</td>
+      <td><span class="t-mark-rev t-since-cxx20">(since C++20)</span></td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<div class="t-li1">
+  <span class="t-li">1)</span> Checks if there is an element with key equivalent
+  to
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">key</span></span> in
+  the container.
+</div>
+<div class="t-li1">
+  <span class="t-li">2)</span> Checks if there is an element with key that
+  compares <i>equivalent</i> to the value
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span
+  >. This overload participates in overload resolution only if
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      >Hash<span class="sy4">::</span
+      ><span class="me2">is_transparent</span></span
+    ></span
+  >
+  and
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      >KeyEqual<span class="sy4">::</span
+      ><span class="me2">is_transparent</span></span
+    ></span
+  >
+  are valid and each denotes a type. This assumes that such <code>Hash</code> is
+  callable with both <code>K</code> and <code>Key</code> type, and that the
+  <code>KeyEqual</code> is transparent, which, together, allows calling this
+  function without constructing an instance of <code>Key</code>.
+</div>
+<h3>
+  <span class="mw-headline" id="Parameters">Parameters</span>
+</h3>
+<table class="t-par-begin">
+  <tbody>
+    <tr class="t-par">
+      <td>key</td>
+      <td>-</td>
+      <td>key value of the element to search for</td>
+    </tr>
+    <tr class="t-par">
+      <td>x</td>
+      <td>-</td>
+      <td>a value of any type that can be transparently compared with a key</td>
+    </tr>
+  </tbody>
+</table>
+<h3>
+  <span class="mw-headline" id="Return_value">Return value</span>
+</h3>
+<p>
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      ><span class="kw2">true</span></span
+    ></span
+  >
+  if there is such an element, otherwise
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      ><span class="kw2">false</span></span
+    ></span
+  >.
+</p>
+<h3>
+  <span class="mw-headline" id="Complexity">Complexity</span>
+</h3>
+<p>Constant on average, worst case linear in the size of the container.</p>

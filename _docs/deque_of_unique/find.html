@@ -1,0 +1,114 @@
+---
+last_modified_at: "2025-01-04 13:13:57 +0800"
+layout: deque_of_unique_method
+title: find
+---
+
+<table class="t-dcl-begin">
+  <tbody>
+    <tr class="t-dcl t-since-cxx11">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp"
+            >const_iterator find<span class="br0">(</span>
+            <span class="kw4">const</span> Key<span class="sy3">&amp;</span> key
+            <span class="br0">)</span> <span class="kw4">const</span
+            ><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(1)</td>
+      <td></td>
+    </tr>
+    <tr class="t-dcl t-since-cxx20">
+      <td>
+        <div>
+          <span id="Version_4"></span
+          ><span class="mw-geshi cpp source-cpp"
+            ><span class="kw1">template</span><span class="sy1">&lt;</span>
+            <span class="kw1">class</span> K <span class="sy1">&gt;</span><br />
+            const_iterator find<span class="br0">(</span>
+            <span class="kw4">const</span> K<span class="sy3">&amp;</span> x
+            <span class="br0">)</span> <span class="kw4">const</span
+            ><span class="sy4">;</span></span
+          >
+        </div>
+      </td>
+      <td>(2)</td>
+      <td><span class="t-mark-rev t-since-cxx20">(since C++20)</span></td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="t-li1">
+  <span class="t-li">1)</span> Finds an element with key equivalent to
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">key</span></span
+  >.
+</div>
+<div class="t-li1">
+  <span class="t-li">2)</span> Finds an element with key that compares
+  <i>equivalent</i> to the value
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span
+  >. This overload participates in overload resolution only if
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      >Hash<span class="sy4">::</span
+      ><span class="me2">is_transparent</span></span
+    ></span
+  >
+  and
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      >KeyEqual<span class="sy4">::</span
+      ><span class="me2">is_transparent</span></span
+    ></span
+  >
+  are valid and each denotes a type. This assumes that such <code>Hash</code> is
+  callable with both <code>K</code> and <code>Key</code> type, and that the
+  <code>KeyEqual</code> is transparent, which, together, allows calling this
+  function without constructing an instance of <code>Key</code>.
+</div>
+<h3>
+  <span class="mw-headline" id="Parameters">Parameters</span>
+</h3>
+<table class="t-par-begin">
+  <tbody>
+    <tr class="t-par">
+      <td>key</td>
+      <td>-</td>
+      <td>key value of the element to search for</td>
+    </tr>
+    <tr class="t-par">
+      <td>x</td>
+      <td>-</td>
+      <td>a value of any type that can be transparently compared with a key</td>
+    </tr>
+  </tbody>
+</table>
+<h3>
+  <span class="mw-headline" id="Return_value">Return value</span>
+</h3>
+<p>
+  An iterator to the requested element. If no such element is found,
+  past-the-end (see
+  <span class="t-lc"
+    ><a
+      href="{{ '/_docs/deque_of_unique/cend' | relative_url }}"
+      title="containerofunique/deque_of_unique/cend"
+      >cend()</a
+    ></span
+  >) iterator is returned.
+</p>
+<h3>
+  <span class="mw-headline" id="Complexity">Complexity</span>
+</h3>
+<p>
+  <span class="texhtml" style="white-space: nowrap">O(N)</span>, where
+  <span class="texhtml" style="white-space: nowrap">N</span> is in the size of
+  the container.
+</p>

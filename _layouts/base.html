@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-js">
+  <head>
+    <title style="display: none">{{page.title}}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css" />
+    <!-- Link to CSS files -->
+    <link
+      rel="stylesheet"
+      href="{{ site.baseurl }}/assets/css/code-editor.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ site.baseurl }}/assets/css/suggestions.css"
+    />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/links.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/text.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/error.css" />
+    <link
+      rel="stylesheet"
+      href="{{ site.baseurl }}/assets/css/ace_editor.css"
+    />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/ace-tm.css" />
+  </head>
+  <body
+    class="mediawiki ltr page-cpp_container_deque_deque skin-cppreference2 action-view vsc-initialized"
+  >
+    <div id="mw-head" class="noprint">
+      <div id="cpp-head-first-base">
+        <div id="cpp-head-first">
+          <h5>
+            <a href="{{ '/' | relative_url }}">
+              containderofuniqueentries-doc
+            </a>
+          </h5>
+          <div id="cpp-head-search">
+            <!-- 0 -->
+            <div id="p-search">
+              <form action="https://duckduckgo.com/" method="get">
+                <input
+                  type="hidden"
+                  name="sites"
+                  value="https://hjiangcpp.github.io/containerofuniqueentries-doc/"
+                />
+                <input type="search" name="q" />
+                <input type="submit" value="Search" />
+              </form>
+            </div>
+            <!-- /0 -->
+          </div>
+        </div>
+      </div>
+      <div id="cpp-head-second-base">
+        <div id="cpp-head-second">
+          <div id="cpp-head-tools-left">
+            <div id="p-namespaces" class="vectorTabs">
+              <h5>Namespaces</h5>
+              <ul>
+                <li id="ca-nstab-main" class="">
+                  <span
+                    ><a
+                      href="{{ '/_docs/deque_of_unique/index' | relative_url }}"
+                      title="deque_of_unique"
+                      accesskey="c"
+                      >deque_of_unique</a
+                    ></span
+                  >
+                </li>
+                <li id="ca-talk">
+                  <span
+                    ><a
+                      href="{{ '/_docs/vector_of_unique/index' | relative_url }}"
+                      title="vector_of_unique"
+                      accesskey="t"
+                      >vector_of_unique</a
+                    ></span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="cpp-content-base">
+      <div id="content">
+        <a id="top"></a>
+        <div id="mw-js-message" style="display: none"></div>
+        <div id="bodyContent">
+          <div id="siteSub">
+            From https://hjiang.github.io/containerofuniqueentries-doc/
+          </div>
+          <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+            {{ content }}
+          </div>
+          <!-- This will render the content from index.md -->
+        </div>
+      </div>
+    </div>
+    <!-- Include the footer -->
+    {% include footer.html %}
+  </body>
+</html>
+
+<script>
+  const currentURL = window.location.href;
+
+  document.querySelectorAll("ul li a").forEach((link) => {
+    if (
+      currentURL.includes("deque_of_unique") &&
+      link.getAttribute("href").includes("deque_of_unique")
+    ) {
+      link.parentElement.parentElement.classList.add("selected");
+    } else if (
+      currentURL.includes("vector_of_unique") &&
+      link.getAttribute("href").includes("vector_of_unique")
+    ) {
+      link.parentElement.parentElement.classList.add("selected");
+    } else {
+      link.parentElement.parentElement.classList.remove("selected");
+    }
+  });
+</script>

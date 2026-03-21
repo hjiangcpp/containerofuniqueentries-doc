@@ -1,0 +1,153 @@
+---
+last_modified_at: "2025-01-05 15:31:21 +0800"
+layout: deque_of_unique_method
+title: push_back
+---
+
+<table class="t-dcl-begin">
+  <tbody>
+    <tr class="t-dcl">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp">
+            <span class="kw4">bool</span>&nbsp;push_back<span class="br0"
+              >(</span
+            ><span class="kw">const</span>&nbsp;T<span class="sy3">&</span
+            >&nbsp;value<span class="br0">)</span><span class="sy4">;</span>
+          </span>
+        </div>
+      </td>
+      <td><span class="number">(1)</span></td>
+    </tr>
+    <tr class="t-dcl">
+      <td>
+        <div>
+          <span class="mw-geshi cpp source-cpp">
+            <span class="kw4">bool</span>&nbsp;push_back<span class="br0"
+              >(</span
+            >&nbsp;T<span class="sy3">&&</span>&nbsp;value<span class="br0"
+              >)</span
+            ><span class="sy4">;</span>
+          </span>
+        </div>
+      </td>
+      <td><span class="number">(2)</span></td>
+    </tr>
+    <tr class="t-dcl-sep">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  The <code>push_back</code> method adds a value to the back of the deque if it
+  is not already present. This ensures that all entries in the deque remain
+  unique.
+</p>
+<div class="t-li1">
+  <span class="t-li">1)</span> The new element is initialized as a copy of
+  <span class="t-c mw-geshi cpp source-cpp">value</span>.
+</div>
+<div class="t-li1">
+  <span class="t-li">2)</span>
+  <span class="t-c mw-geshi cpp source-cpp">value</span> is moved into the new
+  element.
+</div>
+<p>
+  All iterators (including the
+  <span class="t-c mw-geshi cpp source-cpp"
+    ><a
+      href="{{ '/_docs/deque_of_unique/cend' | relative_url }}"
+      title="containerofunique/deque_of_unique/crend"
+      >cend()</a
+    ></span
+  >
+  iterator) are invalidated. No references are invalidated.
+</p>
+<p></p>
+<h3>
+  <span class="mw-headline"> Parameters </span>
+</h3>
+<table class="t-par-begin">
+  <tbody>
+    <tr class="t-par">
+      <td><strong>value</strong></td>
+      <td>-</td>
+      <td>The value of the element to append.</td>
+    </tr>
+    <tr class="t-par-hitem">
+      <td colspan="3"><strong>Type Requirements</strong></td>
+    </tr>
+    <tr class="t-par-req">
+      <td colspan="3">
+        -&nbsp;T must meet the requirements of
+        <a
+          href="http://en.cppreference.com/w/cpp/named_req/CopyAssignable"
+          title="cpp/named req/CopyAssignable"
+          ><span
+            style="
+              font-family: Georgia, 'DejaVu Serif', serif;
+              font-style: italic;
+            "
+            >CopyAssignable</span
+          ></a
+        >
+        in order to use overload (1).
+      </td>
+    </tr>
+    <tr class="t-par-req">
+      <td colspan="3">
+        -&nbsp;T must meet the requirements of
+        <a
+          href="http://en.cppreference.com/w/cpp/named_req/MoveAssignable"
+          title="cpp/named req/MoveAssignable"
+          ><span
+            style="
+              font-family: Georgia, 'DejaVu Serif', serif;
+              font-style: italic;
+            "
+            >MoveAssignable</span
+          ></a
+        >
+        in order to use overload (2).
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3>
+  <span class="mw-headline"> Return Value </span>
+</h3>
+<table class="t-par-begin">
+  <tbody>
+    <tr class="highlight-row">
+      <td colspan="3">
+        Returns
+        <span class="t-c"
+          ><span class="mw-geshi cpp source-cpp"
+            ><span class="kw2">true</span></span
+          ></span
+        >
+        if the appendage is successful, and
+        <span class="t-c"
+          ><span class="mw-geshi cpp source-cpp"
+            ><span class="kw2">false</span></span
+          ></span
+        >
+        otherwise.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3>
+  <span class="mw-headline" id="Complexity">Complexity</span>
+</h3>
+<p>Constant.</p>
+<h3>Exceptions</h3>
+<p>
+  If an exception is thrown for any reason, this function has no effect (<a
+    href="https://en.cppreference.com/w/cpp/language/exceptions#Exception_safety"
+    title="cpp/language/exceptions"
+    >strong exception safety guarantee</a
+  >).
+</p>
