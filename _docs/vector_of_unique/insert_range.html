@@ -40,34 +40,24 @@ title: insert_range
   <span class="mw-geshi cpp source-cpp">__cplusplus &gt;= 202302L</span>.
 </p>
 <p>
-  All iterators (including the
+  If after the operation the new
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">size()</span></span>
+  is greater than the old
+  <span class="t-c"><span class="mw-geshi cpp source-cpp">capacity()</span></span>,
+  a reallocation takes place, in which case all iterators (including the
   <a
     href="{{ '/_docs/vector_of_unique/cend' | relative_url }}"
     title="containerofunique/vector_of_unique/cend"
     ><code>cend()</code></a
   >
-  iterator) are invalidated. References are invalidated too, unless
-  <span class="t-c"
-    ><span class="mw-geshi cpp source-cpp"
-      >pos <span class="sy1">==</span></span
-    ><code>&nbsp;</code
-    ><a
-      href="{{ '/_docs/vector_of_unique/cbegin' | relative_url }}"
-      title="containerofunique/vector_of_unique/cbegin"
-      ><code>cbegin()</code></a
-    ></span
+  iterator) and all references to the elements are invalidated. Otherwise, only
+  the iterators and references at or after the insertion point (including the
+  <a
+    href="{{ '/_docs/vector_of_unique/cend' | relative_url }}"
+    title="containerofunique/vector_of_unique/cend"
+    ><code>cend()</code></a
   >
-  or
-  <span class="t-c"
-    ><span class="mw-geshi cpp source-cpp"
-      >pos <span class="sy1">==</span></span
-    ><code>&nbsp;</code
-    ><a
-      href="{{ '/_docs/vector_of_unique/cend' | relative_url }}"
-      title="containerofunique/vector_of_unique/cend"
-      ><code>cend()</code></a
-    ></span
-  >, in which case they are not invalidated.
+  iterator) are invalidated.
 </p>
 <h3>
   <span class="mw-headline" id="Parameters">Parameters</span>
