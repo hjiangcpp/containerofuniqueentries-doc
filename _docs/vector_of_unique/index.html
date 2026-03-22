@@ -1013,7 +1013,9 @@ title: vector_of_unique
         </div>
       </td>
       <td>
-        &nbsp;returns range of elements matching a specific key&nbsp;
+        &nbsp;returns range of elements matching a specific key; supports
+        heterogeneous lookup (C++20) when <code>Hash::is_transparent</code> and
+        <code>KeyEqual::is_transparent</code> are defined&nbsp;
         <br />
         <span class="t-mark">(public member function)</span>
       </td>
