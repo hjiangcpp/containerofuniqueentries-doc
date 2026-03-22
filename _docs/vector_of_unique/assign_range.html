@@ -27,12 +27,16 @@ title: assign_range
   </tbody>
 </table>
 
-<p>
   Replaces the contents of the container with the unique elements from the range
   <span class="t-c"><span class="mw-geshi cpp source-cpp">rng</span></span>.
-  Intra-range duplicates are silently skipped. All iterators and references to
-  the elements are invalidated.
+  Intra-range duplicates are silently skipped.
 </p>
+<p>
+  Only available when
+  <span class="mw-geshi cpp source-cpp">__cplusplus &gt;= 202302L</span>.
+</p>
+<p>
+  All iterators and references to the elements are invalidated.
 <p>
   Only available when
   <span class="mw-geshi cpp source-cpp">__cplusplus &gt;= 202302L</span>.
