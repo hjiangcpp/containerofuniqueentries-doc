@@ -146,7 +146,9 @@ title: equal_range
   <span class="mw-headline" id="Complexity">Complexity</span>
 </h3>
 <p>
-  <span class="texhtml" style="white-space: nowrap">O(N)</span>, where
-  <span class="texhtml" style="white-space: nowrap">N</span> is the size of the
-  container.
+  Average case: <span class="texhtml" style="white-space: nowrap">O(N)</span>,
+  where <span class="texhtml" style="white-space: nowrap">N</span> is the size
+  of the container (hash lookup is O(1) average, but a linear scan of the
+  sequence is required to obtain a sequence iterator).<br />
+  Worst case: <span class="texhtml" style="white-space: nowrap">O(N)</span>.
 </p>

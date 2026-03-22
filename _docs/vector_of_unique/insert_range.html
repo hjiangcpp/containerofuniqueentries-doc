@@ -39,6 +39,36 @@ title: insert_range
   Only available when
   <span class="mw-geshi cpp source-cpp">__cplusplus &gt;= 202302L</span>.
 </p>
+<p>
+  All iterators (including the
+  <a
+    href="{{ '/_docs/vector_of_unique/cend' | relative_url }}"
+    title="containerofunique/vector_of_unique/cend"
+    ><code>cend()</code></a
+  >
+  iterator) are invalidated. References are invalidated too, unless
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      >pos <span class="sy1">==</span></span
+    ><code>&nbsp;</code
+    ><a
+      href="{{ '/_docs/vector_of_unique/cbegin' | relative_url }}"
+      title="containerofunique/vector_of_unique/cbegin"
+      ><code>cbegin()</code></a
+    ></span
+  >
+  or
+  <span class="t-c"
+    ><span class="mw-geshi cpp source-cpp"
+      >pos <span class="sy1">==</span></span
+    ><code>&nbsp;</code
+    ><a
+      href="{{ '/_docs/vector_of_unique/cend' | relative_url }}"
+      title="containerofunique/vector_of_unique/cend"
+      ><code>cend()</code></a
+    ></span
+  >, in which case they are not invalidated.
+</p>
 <h3>
   <span class="mw-headline" id="Parameters">Parameters</span>
 </h3>

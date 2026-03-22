@@ -37,6 +37,26 @@ title: append_range
   Only available when
   <span class="mw-geshi cpp source-cpp">__cplusplus &gt;= 202302L</span>.
 </p>
+<p>
+  If after the operation the new
+  <a href="{{ '/_docs/vector_of_unique/size' | relative_url }}"
+    title="containerofunique/vector_of_unique/size"><code>size()</code></a>
+  is greater than the old capacity, a reallocation takes place, in which case
+  all iterators (including the
+  <a
+    href="{{ '/_docs/vector_of_unique/cend' | relative_url }}"
+    title="containerofunique/vector_of_unique/cend"
+    ><code>cend()</code></a
+  >
+  iterator) and all references to the elements are invalidated. Otherwise only
+  the
+  <a
+    href="{{ '/_docs/vector_of_unique/cend' | relative_url }}"
+    title="containerofunique/vector_of_unique/cend"
+    ><code>cend()</code></a
+  >
+  iterator is invalidated.
+</p>
 <h3>
   <span class="mw-headline" id="Parameters">Parameters</span>
 </h3>
